@@ -1,0 +1,544 @@
+---
+title: "Network Golfo San Jorge"
+author: "L.A.S."
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+## Setup
+
+```{r setup, eval=TRUE,echo=FALSE }
+load(".RData")
+#source("R/network_fun.r")
+
+require(igraph)
+require(NetIndices)
+require(multiweb)
+require(stringr)
+require(meweasmo)
+require(dplyr)
+require(ggplot2)
+require(future.apply)
+require(devtools)
+require(doFuture)
+
+
+```
+
+
+## GSJ Topological analisis with and without fisheries
+
+**Data Frames** 
+
+websTbl = data.frame with empirical networks
+
+
+```{r readNetworkCheck, eval=FALSE,echo=F,message=F,warning=F}
+
+# NO FISHING 
+#
+fileName <- "Data/TTSinPescaInteraccion.dat"
+
+#
+# Read Network of posible interactions metaweb
+# Prey -> predator 
+
+g <- readNetwork(fileName,edgeListFormat=2) 
+# list all vertices
+g
+E(g)[]
+E(g)$weight
+
+# Check POM must have all out none in links
+#
+V(g)[nei(V(g)[name=="POM"],"out")]
+V(g)[nei(V(g)[name=="POM"],"in")]
+
+#
+# Check sum of diet for predators must be = 1 
+#
+B <- as_adj(g,sparse = FALSE,attr = "weight")
+BS <- colSums(B)
+BS[BS!=1]
+
+# FISHING
+#
+
+fileName <- "Data/TTotalInteraccion.dat"    
+g1 <- readNetwork(fileName,edgeListFormat=2)
+# list all vertices
+g1
+V(g1)[]
+
+# PESCA must have all in links
+#
+V(g1)[nei(V(g1)[name=="PESCA"],"out")]
+V(g1)[nei(V(g1)[name=="PESCA"],"in")]
+
+#
+# Check sum of diet for predators must be = 1 
+#
+B <- as_adj(g1,sparse = FALSE,attr = "weight")
+BS <- colSums(B)
+BS[BS!=1]
+
+
+# Differences between edges NoFishing and Fishing
+#
+difg <- g1 %m% g 
+E(difg)
+
+# Differences between vertex 
+setdiff(V(g1)$name,V(g)$name)
+
+plotTrophLevel(g,modules = TRUE)
+plotTrophLevel(g1,modules = TRUE)
+
+as.numeric(V(g1)["PESCA"])
+
+#save.image()
+
+
+```
+
+
+# Plot networks with numbers 
+
+```{r plotNetworks, eval=FALSE,echo=F,message=T,warning=T}
+
+
+# UNFISH Plot interactively with numbers
+
+# Names table
+g2 <- g
+knitr::kable( tibble(Number=as.numeric(V(g2)),Species=V(g2)$name   ))
+
+# Change names to numbers
+#
+V(g2)$name <- as.numeric(V(g2))
+plotTrophLevel(g2,modules =FALSE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11), vertexSizeFactor = 0, vertexSizeMin = 15, vertex.label.color="white")
+
+# FISH Plot interactively with numbers
+# Names table
+g2 <- g1
+knitr::kable( tibble(Number=as.numeric(V(g2)),Species=V(g2)$name   ))
+
+# Change names to numbers
+#
+V(g2)$name <- as.numeric(V(g2))
+plotTrophLevel(g2,modules =FALSE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11), vertexSizeFactor = 0, vertexSizeMin = 15, vertex.label.color="white")
+
+# convert to PNG
+#
+# convert -colorspace sRGB -density 300 unfished.eps -background white -flatten -resize 1863x2636 -units pixelsperinch -density 224.993 unfished.png
+
+
+
+#
+# Plot subnetwork of Merluza
+#
+V(g)$name == "Merluccius hubbsi"
+pos <- which(V(g)$name == "Merluccius hubbsi")
+g_m <- make_ego_graph(g, nodes=V(g)[pos])
+g_m <- g_m[[1]]
+nms <- as.numeric(V(g_m)) 
+nms[1] <- V(g_m)$name[1]
+V(g_m)$name <-  nms
+V(g_m)$width = E(g_m)$weight * 100
+c <- cluster_infomap(as.undirected(g_m))
+plot_troph_level(g_m,modules =TRUE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11),vertex.label.color="black", vertexSizeFactor = 20, vertexSizeMin = 10, community_obj = c, edge.width = E(g_m)$weight*10)
+
+#
+# Plot subnetwork of PESCA
+#
+pos <- which(V(g1)$name == "PESCA")
+g_m <- make_ego_graph(g1, nodes=V(g1)[pos])
+g_m <- g_m[[1]]
+nms <- as.numeric(V(g_m)) 
+pos <- which(V(g_m)$name == "PESCA")
+nms[pos] <- V(g_m)$name[pos]
+V(g_m)$name <-  nms
+V(g_m)$width = E(g_m)$weight * 100
+c <- cluster_infomap(as.undirected(g_m))
+plot_troph_level(g_m,modules =TRUE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11),vertex.label.color="black", vertexSizeFactor = 20, vertexSizeMin = 10, community_obj = c, edge.width = E(g_m)$weight*10)
+
+
+```
+
+
+## Calc metrics interval confidence using curveBall  
+
+
+```{r calcMetricsNoFishing, eval=TRUE,echo=F,message=T,warning=T}
+
+websTbl <- calcTopologicalIndices(g)
+# websTbl <- bind_cols(websTbl, calcIncoherence(g)) 
+websTbl <- bind_cols(websTbl, calc_QSS(g,10000,48, negative = -1, positive = 1)) %>% mutate(Network="noFishing")
+
+lred <- curve_ball(g,1000)
+curveBallNets <- calcTopologicalIndices(lred,ncores=48) %>% mutate(Network="noFishing")
+
+#curveBallNets <- bind_cols(curveBallNets, calcIncoherence(lred,ncores = 48)) %>% mutate(Network="noFishing")
+
+tp0 <- calcModularitySWnessZScore(g,lred,ncores=48)
+tp <- mutate(tp0$da, Network="noFishing")
+#websTbl <- websTbl %>% select(Size:QSS)
+wt1 <- inner_join(websTbl,tp)
+cb1 <- tp0$sims %>% select(modularity)
+curveBallNets <- bind_cols(curveBallNets, cb1)
+
+save.image()
+
+## With Fishing 
+
+tp <- calcTopologicalIndices(g1)
+#tp <- bind_cols(tp, calcIncoherence(g1)) 
+tp <- bind_cols(tp, calc_QSS(g1,10000,48, negative = -1, positive = 1)) %>% mutate(Network="Fishing")
+
+websTbl <- bind_rows(websTbl, tp)
+
+lred <- curveBall(g1,1000)
+tp <- calcTopologicalIndices(lred,ncores=48) %>% mutate(Network="Fishing")
+#tp <- bind_cols(tp, calcIncoherence(lred,ncores=48)) %>% mutate(Network="Fishing")
+
+tp0 <- calcModularitySWnessZScore(g1,lred,ncores=48)
+tp1 <- mutate(tp0$da, Network="Fishing")
+wt2 <- inner_join(websTbl,tp1)
+
+tp <- tp %>% bind_cols(tp0$sims %>% select(modularity))
+curveBallNets <- bind_rows(curveBallNets, tp)
+
+websTbl <- bind_rows(wt1,wt2)
+
+
+rm(cb1,cb2,tp,tp0,wt1,wt2,lred,pf)
+save.image()
+```
+
+
+## Calc metrics using diets as weights 
+
+* calc QSS 
+
+```{r calcMetricsDietsQSS, eval=TRUE,echo=F,message=T,warning=T}
+
+#
+# Unfished = noFishing
+# 
+wQSS <- multiweb::calc_QSS(g,10000,48,istrength=TRUE) %>% mutate(Network="noFishing") %>% rename(dietQSS = QSS, dietMEing=MEing)
+wQSS <- wQSS %>% bind_rows(multiweb::calc_QSS(g1,10000,48,istrength=TRUE) %>% mutate(Network="Fishing") %>% rename(dietQSS = QSS, dietMEing=MEing))
+websTbl <- websTbl %>% inner_join(wQSS)
+rm(wQSS)
+save.image()
+```
+
+* Calculate TL and modularity using BRAND NEW randomizations with weights!!!!!!!!!!!!!!! 
+
+```{r calcMetricsDietsTL, eval=TRUE,echo=F,message=T,warning=T}
+
+weighted_webs <- calc_weighted_topological_indices(g) %>% mutate(Network="noFishing")
+lred <- curveBall(g,1000,istrength = TRUE)
+tp <- calc_weighted_topological_indices(lred,ncores=48)
+tp <- bind_cols(tp, calc_modularity(lred,ncores=48,weights = NULL)) %>% mutate(Network="noFishing")
+
+weighted_CurveBallNets <- tp
+rm(tp,lred)
+save.image()
+
+weighted_webs <- weighted_webs %>% bind_rows(calc_weighted_topological_indices(g1) %>% mutate(Network="Fishing"))
+
+lred <- curveBall(g1,1000,istrength = TRUE)
+tp <- calc_weighted_topological_indices(lred,ncores=48)
+tp <- bind_cols(tp, calc_modularity(lred,ncores=48,weights = NULL)) %>% mutate(Network="Fishing")
+
+weighted_CurveBallNets <- bind_rows(weighted_CurveBallNets, tp)
+rm(tp,lred)
+save.image()
+
+plan(multisession)
+wm <- future_lapply(seq_len(100),function(X){
+  wm <- calc_modularity(g,weights = NULL) %>% mutate(Network="noFishing")
+  wm <- bind_rows(wm,calc_modularity(g1,weights = NULL) %>% mutate(Network="Fishing"))
+  })
+wm <- bind_rows(wm)
+
+weighted_webs <- weighted_webs %>% inner_join(wm %>% group_by(Network) %>% summarise(wModularity=mean(Modularity)))
+rm(wm)
+
+# Update to mean modularity 
+#
+wm <- future_lapply(seq_len(100),function(X){
+  wm <- calc_modularity(g,weights = NA) %>% mutate(Network="noFishing")
+  wm <- bind_rows(wm,calc_modularity(g1,weights = NA) %>% mutate(Network="Fishing"))
+  })
+wm <- bind_rows(wm)
+
+
+websTbl <- websTbl  %>% select(Network,everything(),-(Modularity:isSWness)) %>% inner_join(wm %>% group_by(Network) %>% summarise(Modularity=mean(Modularity)))
+
+rm(wm,websTbl_new)
+
+save.image()
+
+```
+
+* WebsTbl
+
+   Network Size Top Basal  Omnivory Links       LD Connectance PathLength Clustering Cannib   TLmean    TLmax LOmnivory Components Vulnerability    VulSD Generality
+1 Unfished  165  27    10 0.6060606  1013 6.139394  0.03720845   2.020661  0.1519309     13 2.944618 4.936072 0.1740484          1      7.340580 1.441673   6.535484
+2   Fished  166  27    10 0.6325301  1084 6.530120  0.03933808   2.086854  0.1728897     13 3.030799 5.026650 0.2329629          1      7.798561 1.436714   6.948718
+     GenSD    QSS     MEing dietQSS dietMEing Modularity
+1 1.115637 0.0576 0.1055118  0.0960 0.1649559  0.2882344
+2 1.165970 0.0304 0.1261070  0.0485 0.1946205  0.2740590
+
+* weighted_webs
+
+
+
+## Plot metrics interval confidence using curveBall 
+
+```{r plotMetricsCurbeBall, eval=FALSE,echo=F,message=T,warning=T}
+
+# Plots of bivariate 95% confidence ellipses 
+#
+#curveBallNets <- curveBallNets %>% mutate(Network=if_else(Network=="SanJorgeFishing","Fishing","noFishing"))
+require(forcats)
+pf <- curveBallNets  %>% group_by(Network) %>% mutate(Network=factor(Network), Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+pf %>% summarise_if(is.numeric, median) 
+
+websTbl <- websTbl%>% mutate(Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+#g2 <- ggplot(pf,aes(Q,color=Network,fill=Network))+ geom_density(alpha=0.2) +  scale_color_viridis_d()+ scale_fill_viridis_d()+theme_bw() + geom_point(data=websTbl[1:2,],aes(Q,0),shape = 21, fill = "white",size=2)
+#g2 <- ggplot(pf,aes(Q,color=Network,fill=Network))+ geom_histogram(alpha=0.2) +  scale_color_viridis_d()+ scale_fill_viridis_d()+theme_bw() + geom_point(data=websTbl[1:2,],aes(Q,0),shape = 21, fill = "white",size=2)
+# g2 <- ggplot(pf,aes(Q, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_viridis_d()+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", size = 0.1,color="Black")+  geom_point(data=websTbl[1:2,],aes(Network,Q),shape = 21, fill = "white",size=2)
+# g2
+
+# Filter outliers would be a point below [Q1- (1.5)IQR] or above [Q3+(1.5)IQR].
+#
+Q <- quantile(pf$TLmean, probs=c(.25, .75), na.rm = FALSE)
+iqr <- IQR(pf$TLmean)
+pf1 <- pf %>% filter(TLmean<=Q[2]+1.5*iqr,TLmean>=Q[1]-1.5*iqr) 
+
+g1 <- ggplot(pf1,aes(TLmean, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_viridis_d()+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", size = 0.1,color="Black") +  geom_point(data=websTbl[1:2,],aes(Network,TLmean),shape = 21, fill = "white",size=2)  + xlab("")
+g1
+
+
+# Filter outliers would be a point below [Q1- (1.5)IQR] or above [Q3+(1.5)IQR].
+#
+
+Q <- quantile(pf$LOmnivory, probs=c(.25, .75), na.rm = FALSE)
+iqr <- IQR(pf$LOmnivory)
+pf1 <- pf %>% filter(LOmnivory<=Q[2]+1.5*iqr,LOmnivory>=Q[1]-1.5*iqr) 
+
+g3 <- ggplot(pf1,aes(LOmnivory, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_viridis_d()+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", size = 0.1,color="Black") +  geom_point(data=websTbl[1:2,],aes(Network,LOmnivory),shape = 21, fill = "white",size=2)  + xlab("")  + ylab("Omnivory")
+g3
+
+
+g2 <- ggplot(pf,aes(modularity, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_viridis_d()+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", size = 0.1,color="Black") +  geom_point(data=websTbl[1:2,],aes(Network,Modularity),shape = 21, fill = "white",size=2) + xlab("")
+g2
+
+require(cowplot)
+
+gg <- plot_grid(g1 + theme(legend.position="none"),
+                g2 + theme(legend.position="none"),
+                g3 + theme(legend.position="none"),align = "h",ncol=3)
+
+gg
+# add the legend to the row we made earlier. Give it one-third of the width
+# of one plot (via rel_widths).
+# p <- plot_grid( gg, get_legend(g2+theme(legend.position="bottom")), ncol=1,rel_heights = c(1, .2))
+# p
+save_plot("Figures/curveBall_metrics.png",gg,base_width=8,base_height=5,dpi=600)
+
+
+#
+# Calculates the Anderson-Darling Test and median diff effect size
+#
+
+require(kSamples)
+require(tidyr)
+require(purrr)
+
+df <- curveBallNets %>% dplyr::select(TLmean,LOmnivory,modularity) %>% map(~ad.test(. ~ Network, data=curveBallNets)) %>% map_df(~.$ad[1,])
+knitr::kable(df)
+
+df <- curveBallNets %>% group_by(Network) %>% dplyr::select(TLmean,LOmnivory,modularity) %>% summarize_if(is.numeric, median)  %>% gather("metric","medianDif" ,-Network) %>% group_by(metric) %>% summarize_if(is.numeric,~diff(.))
+
+df1 <- curveBallNets %>% dplyr::select(Network,TLmean,LOmnivory,modularity) %>% gather("metric","value" ,-Network) %>%   group_by(metric) %>% summarize(sdM = sd(value))
+
+df2 <- curveBallNets %>% group_by(Network) %>% dplyr::select(TLmean,LOmnivory,modularity) %>% summarize_if(is.numeric, median) %>%  gather("metric","median" ,-Network) %>%  spread(Network,median)
+
+df <- inner_join(df,df1)  %>% inner_join(df2) %>% mutate(effectSize=medianDif/sdM) %>% arrange(effectSize) 
+
+knitr::kable(df)
+
+
+#
+# Confidence interval for QSS
+#
+require(binom)
+df <- websTbl %>% dplyr::select(Network,QSS) %>% group_by(Network) %>% do( binom.confint(.$QSS*10000, 10000,methods = "wilson")) %>% mutate(type="Unweighted")
+
+prop.test(x=websTbl$QSS*10000, n=c(10000,10000))
+
+ggplot(df, aes(Network,mean,color=Network)) + geom_point() + geom_errorbar(aes(ymin=lower,ymax=upper),width=0.2) + scale_color_viridis_d()+ theme_bw() + ylab("Quasi sign stability")+ guides(color="none")
+#ggsave("Figures/QSS.png",width=6,height=5,units="in",dpi=600)
+
+#
+# Confidence interval for diet QSS
+#
+require(binom)
+df1 <- websTbl %>% dplyr::select(Network,dietQSS) %>% group_by(Network) %>% do( binom.confint(.$dietQSS*10000, 10000,methods = "wilson")) %>% mutate(type="Weighted")
+
+prop.test(x=websTbl$dietQSS*10000, n=c(10000,10000))
+
+ggplot(df, aes(Network,mean,color=Network)) + geom_point() + geom_errorbar(aes(ymin=lower,ymax=upper),width=0.2) + scale_color_viridis_d()+ theme_bw() + ylab("Weighted Quasi sign stability")+ guides(color="none")
+#ggsave("Figures/dietQSS.png",width=6,height=5,units="in",dpi=600)
+
+require(forcats)
+df <- bind_rows(df,df1) 
+df <- df %>% mutate(Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+ggplot(df, aes(Network,mean,color=Network)) + geom_point() + geom_errorbar(aes(ymin=lower,ymax=upper),width=0.2) + scale_color_viridis_d()+ theme_bw() + facet_wrap( ~type)+ guides(color="none") + ylab("Quasi sign stability")
+ggsave("Figures/QSS.png",width=6,height=5,units="in",dpi=600)
+
+```
+
+|metric     |  medianDif|       sdM|   Fishing| noFishing| effectSize|
+|:----------|----------:|---------:|---------:|---------:|----------:|
+|TLmean     | -0.0869179| 0.1146408| 3.0350812| 2.9481633| -0.7581761|
+|LOmnivory  | -0.0597176| 0.2268089| 0.2381428| 0.1784251| -0.2632949|
+|modularity |  0.0138238| 0.0072483| 0.2726800| 0.2865037|  1.9071770|
+
+
+## Plot weighted metrics interval confidence using curveBall 
+
+```{r plotWeightedMetricsCurbeBall, eval=FALSE,echo=F,message=T,warning=T}
+
+# Plots of bivariate 95% confidence ellipses 
+#
+#curveBallNets <- curveBallNets %>% mutate(Network=if_else(Network=="SanJorgeFishing","Fishing","noFishing"))
+require(forcats)
+pf <- weighted_CurveBallNets  %>% group_by(Network) %>% mutate(Network=factor(Network), Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+pf %>% summarise_if(is.numeric, median) 
+
+weighted_webs <- weighted_webs %>% mutate(Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+
+
+# Filter outliers would be a point below [Q1- (1.5)IQR] or above [Q3+(1.5)IQR].
+#
+Q <- quantile(pf$wTLmean, probs=c(.25, .75), na.rm = FALSE)
+iqr <- IQR(pf$wTLmean)
+pf1 <- pf %>% filter(wTLmean<=Q[2]+1.5*iqr,wTLmean>=Q[1]-1.5*iqr) 
+
+g4 <- ggplot(pf1,aes(wTLmean, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_viridis_d()+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", size = 0.1,color="Black")+  geom_point(data=weighted_webs[1:2,],aes(Network,wTLmean),shape = 21, fill = "white",size=2) + ylab("Weigthed TLmean") + xlab("")
+g4
+
+g5 <- ggplot(pf,aes(Modularity, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_viridis_d()+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", size = 0.1,color="Black") +  geom_point(data=weighted_webs[1:2,],aes(Network,wModularity),shape = 21, fill = "white",size=2) + xlab("") + ylab("Weigthed Modularity")
+g5
+
+# Filter outliers would be a point below [Q1- (1.5)IQR] or above [Q3+(1.5)IQR].
+#
+Q <- quantile(pf$wLOmnivory, probs=c(.25, .75), na.rm = FALSE)
+iqr <- IQR(pf$wLOmnivory)
+pf1 <- pf %>% filter(wLOmnivory<=Q[2]+1.5*iqr,wLOmnivory>=Q[1]-1.5*iqr) 
+
+g6 <- ggplot(pf1,aes(wLOmnivory, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_viridis_d()+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", size = 0.1,color="Black") +  geom_point(data=weighted_webs[1:2,],aes(Network,wLOmnivory),shape = 21, fill = "white",size=2)  + xlab("") + ylab("Weigthed Omnivory")
+
+g6
+
+require(cowplot)
+gg <- plot_grid(g1 + theme(legend.position="none"),
+                g2 + theme(legend.position="none"),
+                g3 + theme(legend.position="none"),
+                g4 + theme(legend.position="none"),
+                g5 + theme(legend.position="none"),
+                g6 + theme(legend.position="none"),align = "h",ncol=3)
+
+gg
+
+# add the legend to the row we made earlier. Give it one-third of the width
+# of one plot (via rel_widths).
+# p <- plot_grid( gg, get_legend(g2+theme(legend.position="bottom")), ncol=1,rel_heights = c(1, .2))
+# p
+save_plot("Figures/weighed_curveBall_metrics.png",gg,base_width=8,base_height=6,dpi=600)
+
+
+require(kSamples)
+require(tidyr)
+require(purrr)
+
+df <- weighted_CurveBallNets %>% dplyr::select(wTLmean,wLOmnivory,Modularity) %>% map(~ad.test(. ~ Network, data=weighted_CurveBallNets)) %>% map_df(~.$ad[1,])
+knitr::kable(df)
+
+df <- weighted_CurveBallNets %>% group_by(Network) %>% dplyr::select(wTLmean,wLOmnivory,Modularity) %>% summarize_if(is.numeric, median)  %>% gather("metric","medianDif" ,-Network) %>% group_by(metric) %>% summarize_if(is.numeric,~diff(.))
+
+df1 <- weighted_CurveBallNets %>% dplyr::select(Network,wTLmean,wLOmnivory,Modularity) %>% gather("metric","value" ,-Network) %>%   group_by(metric) %>% summarize(sdM = sd(value))
+
+df2 <- weighted_CurveBallNets %>% group_by(Network) %>% dplyr::select(wTLmean,wLOmnivory,Modularity) %>% summarize_if(is.numeric, median) %>%  gather("metric","median" ,-Network) %>%  spread(Network,median)
+
+df <- inner_join(df,df1)  %>% inner_join(df2) %>% mutate(effectSize=medianDif/sdM) %>% arrange(effectSize) 
+
+knitr::kable(df)
+
+
+
+
+
+```
+
+* Anderson Darling / effect Size
+
+|     AD|   T.AD|  asympt. P-value|
+|------:|------:|----------------:|
+| 556.22| 729.92|                0|
+| 554.04| 727.04|                0|
+| 154.63| 201.96|                0|
+
+
+|metric     |  medianDif|       sdM|    Fishing|  noFishing| effectSize|
+|:----------|----------:|---------:|----------:|----------:|----------:|
+|wTLmean    | -0.0911413| 0.2490611|  3.0445255|  2.9533842| -0.3659394|
+|wLOmnivory | -0.0595303| 1.1041427|  0.2234628|  0.1639325| -0.0539154|
+|Modularity |  0.8695713| 1.1809291| -5.3771676| -4.5075963|  0.7363451|
+
+
+# Keystoneness centrality
+
+```{r centrality, eval=FALSE,echo=F,message=T,warning=T}
+
+k_no_fish <- degree(g)
+k_no_fish <- tibble(species=names(k_no_fish),degree=k_no_fish) %>% arrange(desc(degree))
+
+k_fish <- degree(g1)
+k_fish <- tibble(species=names(k_fish),degree=k_fish) %>% arrange(desc(degree))
+
+kk <- left_join(k_fish,k_no_fish, by="species")
+names(kk) <- c("Species","Fished","Unfished")
+knitr::kable(kk)
+
+# Weighted degree (not too much sense with diets)
+#
+# k_no_fish <- strength(g)
+# k_no_fish <- tibble(species=names(k_no_fish),Strength=k_no_fish) %>% arrange(desc(Strength))
+# k_fish <- strength(g1)
+# k_fish <- tibble(species=names(k_fish),Strength=k_fish) %>% arrange(desc(Strength))
+# kk1 <- left_join(k_fish,k_no_fish, by="species")
+# names(kk1) <- c("Species","Fished","Unfished")
+# 
+# knitr::kable(kk1)
+
+# Trophic level 
+
+tl_no_fish <- NetIndices::TrophInd(get.adjacency(g,sparse=F))
+tl_no_fish <- tibble(species=rownames(tl_no_fish),TL=tl_no_fish$TL) %>% arrange(desc(TL))
+tl_fish <- NetIndices::TrophInd(get.adjacency(g1,sparse=F))
+tl_fish <- tibble(species=rownames(tl_fish),TL=tl_fish$TL) %>% arrange(desc(TL))
+kk1 <- left_join(tl_fish,tl_no_fish, by="species")
+names(kk1) <- c("Species","Fished","Unfished")
+
+knitr::kable(kk1,digits = 4)
+
+```
+
+
+

@@ -1,0 +1,11 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.o
+*.so
+*.pdf
+*.html
+*.docx
+*sublime*
+Figures
