@@ -20,13 +20,13 @@ David E.^3^
 
 \* Corresponding author: e-mail lsaravia@campus.ungs.edu.ar, ORCID https://orcid.org/0000-0002-7911-4398
 
-** Keywords: ** Trophic interaction, Fishing impacts, trophic structure, South Western Atlantic, weigthed network analysis
+** Keywords: ** Trophic interaction, Fishing impacts, trophic structure, South Western Atlantic, weighted network analysis, topological network analysis
 
 
 ## Abstract
 
 Demersal fisheries are one of the top anthropic stressors in marine environments. In the long term, some species are more vulnerable to fishery impacts than others, which can lead to permanent changes on the food web. The trophic relationships between predator and prey constitute the food web. The food web represents the energy channels in an ecosystem. Its network structure influences ecosystem diversity and stability.
-The first aim of this study was to describe for the first time the food web of the San Jorge Gulf (Patagonia Argentina) with high resolution, i.e. to the species level when information is available. The San Jorge Gulf was subject to intense fisheries thus our second aim is to analyze the food web structure with and without fishery using several network metrics (mean trophic level, omnivory, modularity and quasi-sign stability) to evaluate if the bottom-trawl industrial fishery altered the network structure and stability.
+The first aim of this study was to describe for the first time the food web of the San Jorge Gulf (Patagonia Argentina) with high resolution, i.e. to the species level when information is available. The San Jorge Gulf was subject to intense fisheries thus our second aim is to analyse the food web structure with and without fishery using several network metrics (mean trophic level, omnivory, modularity and quasi-sign stability) to evaluate if the bottom-trawl industrial fishery altered the network structure and stability.
 The network presented 165 species organized in five trophic levels. Metrics showed  differences between the two networks, reflecting a decrease in stability when fishery was included in the system. Despite the simplification of the system our results show how human activity can alter the structure and the stability of the ecosystem.
 
 
