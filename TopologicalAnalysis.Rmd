@@ -322,10 +322,10 @@ save.image()
 #
 #curveBallNets <- curveBallNets %>% mutate(Network=if_else(Network=="SanJorgeFishing","Fishing","noFishing"))
 require(forcats)
-pf <- curveBallNets  %>% group_by(Network) %>% mutate(Network=factor(Network), Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+pf <- curveBallNets  %>% group_by(Network) %>% mutate(Network=factor(Network), Network=fct_recode(Network,"Non-fishing"="noFishing"))
 pf %>% summarise_if(is.numeric, median) 
 
-websTbl <- websTbl%>% mutate(Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+websTbl <- websTbl%>% mutate(Network=fct_recode(Network,"Non-fishing"="noFishing","Fishing"="Fished"))
 #g2 <- ggplot(pf,aes(Q,color=Network,fill=Network))+ geom_density(alpha=0.2) +  scale_color_viridis_d()+ scale_fill_viridis_d()+theme_bw() + geom_point(data=websTbl[1:2,],aes(Q,0),shape = 21, fill = "white",size=2)
 #g2 <- ggplot(pf,aes(Q,color=Network,fill=Network))+ geom_histogram(alpha=0.2) +  scale_color_viridis_d()+ scale_fill_viridis_d()+theme_bw() + geom_point(data=websTbl[1:2,],aes(Q,0),shape = 21, fill = "white",size=2)
 # g2 <- ggplot(pf,aes(Q, x=Network,colour=Network))+ geom_jitter(alpha=0.2) +  scale_color_viridis_d()+ theme_bw() +   stat_summary(fun.y = median, fun.ymin = median, fun.ymax = median, geom = "crossbar", size = 0.1,color="Black")+  geom_point(data=websTbl[1:2,],aes(Network,Q),shape = 21, fill = "white",size=2)
@@ -415,7 +415,7 @@ ggplot(df, aes(Network,mean,color=Network)) + geom_point() + geom_errorbar(aes(y
 
 require(forcats)
 df <- bind_rows(df,df1) 
-df <- df %>% mutate(Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+#df <- df %>% mutate(Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
 ggplot(df, aes(Network,mean,color=Network)) + geom_point() + geom_errorbar(aes(ymin=lower,ymax=upper),width=0.2) + scale_color_viridis_d()+ theme_bw() + facet_wrap( ~type)+ guides(color="none") + ylab("Quasi sign stability")
 ggsave("Figures/QSS.png",width=6,height=5,units="in",dpi=600)
 
@@ -436,10 +436,10 @@ ggsave("Figures/QSS.png",width=6,height=5,units="in",dpi=600)
 #
 #curveBallNets <- curveBallNets %>% mutate(Network=if_else(Network=="SanJorgeFishing","Fishing","noFishing"))
 require(forcats)
-pf <- weighted_CurveBallNets  %>% group_by(Network) %>% mutate(Network=factor(Network), Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+pf <- weighted_CurveBallNets  %>% group_by(Network) %>% mutate(Network=factor(Network), Network=fct_recode(Network,"Non-fishing"="noFishing"))
 pf %>% summarise_if(is.numeric, median) 
 
-weighted_webs <- weighted_webs %>% mutate(Network=fct_recode(Network,Unfished="noFishing",Fished="Fishing"))
+weighted_webs <- weighted_webs %>% mutate(Network=fct_recode(Network,"Non-fishing"="noFishing"))
 
 
 # Filter outliers would be a point below [Q1- (1.5)IQR] or above [Q3+(1.5)IQR].
