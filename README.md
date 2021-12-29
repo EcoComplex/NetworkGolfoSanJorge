@@ -1,4 +1,4 @@
-#  Ecological Network assembly: how the regional meta web influence local food webs 
+#  Bottom trawl fishery in Patagonia does not alter the structure but can change the stability of the food web
 
 [![DOI](https://zenodo.org/badge/114162751.svg)](https://zenodo.org/badge/latestdoi/114162751)
 

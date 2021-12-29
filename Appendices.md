@@ -232,11 +232,181 @@ for the two food webs.
 
 
 
+# Supplementary Table S3
+
+|Species                      | Fishing| Non_fishing|
+|:----------------------------|-------:|-----------:|
+|Polychaeta                   |       1|           1|
+|Merluccius hubbsi            |       2|           2|
+|Illex argentinus             |       3|           3|
+|Majidae                      |       4|           4|
+|Echiurids                    |       5|           5|
+|Munida gregaria              |       6|           6|
+|Patagonotothen spp           |       7|           7|
+|Pleoticus muelleri           |       8|           8|
+|Pterygosquilla armata armata |       9|           9|
+|echinoids                    |      10|          10|
+|detritus                     |      11|          11|
+|phytoplankton                |      12|          12|
+|zooplankton                  |      13|          13|
+|POM                          |      14|          14|
+|Nereididae                   |      15|          15|
+|biofilm                      |      16|          16|
+|Mytilus edulis               |      17|          17|
+|Doryteuthis gahi             |      18|          18|
+|Engraulis anchoita           |      19|          19|
+|Cynoscion guatucupa          |      20|          20|
+|Trachurus lathami            |      21|          21|
+|Raneya spp                   |      22|          22|
+|Sebastes oculatus            |      23|          23|
+|Bivalve                      |      24|          24|
+|Artemesia longinaris         |      25|          25|
+|Atlantoraja castelnaui       |      26|          26|
+|Dules auriga                 |      27|          27|
+|Libidoclaea granaria         |      28|          28|
+|Libinia spinosa              |      29|          29|
+|Mullus argentinae            |      30|          30|
+|Mustelus schmitti            |      31|          31|
+|Nemadactylus bergi           |      32|          32|
+|Octopus tehuelchus           |      33|          33|
+|Ovalipes trimaculatus        |      34|          34|
+|Paralichthys spp             |      35|          35|
+|Parona signata               |      36|          36|
+|Percophis brasiliensis       |      37|          37|
+|Sympterygia spp              |      38|          38|
+|Triathalassothia argentina   |      39|          39|
+|Stromateus brasiliensis      |      40|          40|
+|Pinguipes brasilianus        |      41|          41|
+|Decapoda                     |      42|          42|
+|Eledone massyae              |      43|          43|
+|Eurypodius latreillii        |      44|          44|
+|isopods                      |      45|          45|
+|Leurocyclus tuberculosus     |      46|          46|
+|Peltarion spinosulum         |      47|          47|
+|Amphipoda                    |      48|          48|
+|Cnidaria                     |      49|          49|
+|Iluocoetes sp                |      50|          50|
+|Psammobatis spp              |      51|          51|
+|Agonopsis chiloensis         |      52|          52|
+|Austropandalus grayi         |      53|          53|
+|Cottoperca gobio             |      54|          54|
+|Macruronus magellanicus      |      55|          55|
+|Myxine spp                   |      56|          56|
+|Pagurus comptus              |      57|          57|
+|Semirossia tenera            |      58|          58|
+|Gasteropods                  |      59|          59|
+|Asteroidea                   |      60|          60|
+|Carcinus maenas              |      61|          61|
+|Macroalgae                   |      62|          62|
+|Mysidacea                    |      63|          63|
+|Robsonella fontaniana        |      64|          64|
+|Copepoda                     |      65|          65|
+|Euphausiacea                 |      66|          66|
+|ophiuroids                   |      67|          67|
+|Peisos petrunkevitchi        |      68|          68|
+|Xystreuris rasile            |      69|          69|
+|Doryteuthis sanpaulensis     |      70|          70|
+|Diatomeas                    |      71|          71|
+|Congiopodus peruvianus       |      72|          72|
+|Enteroctopus megalocyathus   |      73|          73|
+|Genypterus blacodes          |      74|          74|
+|Themisto gaudichaudii        |      75|          75|
+|Chaetognatha                 |      76|          76|
+|Cyrtograpsus spp             |      77|          77|
+|Betaeus truncatus            |      78|          78|
+|Austrolycus laticinctus      |      79|          79|
+|chiton                       |      80|          80|
+|Eunicidae                    |      81|          81|
+|Helcogrammoides cunninghami  |      82|          82|
+|Leucippa pentagona           |      83|          83|
+|Acanthistius patachonicus    |      84|          84|
+|Callorhinchus callorynchus   |      85|          85|
+|Myliobatis goodei            |      86|          86|
+|Odontesthes spp              |      87|          87|
+|Pseudopercis semifasciata    |      88|          88|
+|Gymnoscopelus nicholsi       |      89|          89|
+|Porifera                     |      90|          90|
+|Salilota australis           |      91|          91|
+|Sprattus fuegensis           |      92|          92|
+|Glyceridae                   |      93|          93|
+|Perumytilus purpuratus       |      94|          94|
+|Heterosquilla polydactyla    |      95|          95|
+|Nacella magellanica          |      96|          96|
+|coralline red algae          |      97|          97|
+|Pseudoechinus magellanicus   |      98|          98|
+|Cyanobacteria                |      99|          99|
+|Nematoda                     |     100|         100|
+|Foraminifera                 |     101|         101|
+|Lithodes santolla            |     102|         102|
+|Balanus spp                  |     103|         103|
+|Dipturus chilensis           |     104|         104|
+|Mirounga leonina             |     105|         105|
+|Polyprion americanus         |     106|         106|
+|Scomber colias               |     107|         107|
+|Seriolella porosa            |     108|         108|
+|Squalus acanthias            |     109|         109|
+|Aequipecten tehuelchus       |     110|         110|
+|Rochinia gracilipes          |     111|         111|
+|Tegula patagonica            |     112|         112|
+|Trophon geversianus          |     113|         113|
+|Arctocephalus australis      |     114|         114|
+|Eubalaena australis          |     115|         115|
+|Lagenorhynchus obscurus      |     116|         116|
+|Notorynchus cepedianus       |     117|         117|
+|Otaria flavescens            |     118|         118|
+|Seriolella punctata          |     119|         119|
+|Mnemiopsis leidyi            |     120|         120|
+|Ascidiacea                   |     121|         131|
+|Bathyraja spp                |     122|         136|
+|Cheilodactylus bergi         |     123|         133|
+|Discopyge tschudii           |     124|         137|
+|Eleginops maclovinus         |     125|         121|
+|Galeorhinus galeus           |     126|         145|
+|Schroederichthys bivius      |     127|         139|
+|Urophycis brasiliensis       |     128|         134|
+|Ramnogaster arcuata          |     129|         122|
+|Ribeiroclinus eigenmanni     |     130|         123|
+|Arbacia dufresnii            |     131|         124|
+|Aulacomya atra               |     132|         125|
+|Fissurella spp               |     133|         126|
+|Aphrodite                    |     134|         127|
+|Holothurians                 |     135|         128|
+|Hydrozoa                     |     136|         129|
+|Bryozoa                      |     137|         130|
+|Ostracoda                    |     138|         132|
+|Bassanago albescens          |     139|         135|
+|Odontocymbiola magellanica   |     140|         138|
+|Zearaja chilensis            |     141|         140|
+|Atlantoraja cyclophora       |     142|         141|
+|Bovichthys argentinus        |     143|         142|
+|Buccinanops globulosus       |     144|         143|
+|Cephalorhynchus commersonii  |     145|         144|
+|Genypterus brasiliensis      |     146|         146|
+|Globicephala melas edwardii  |     147|         147|
+|Lagenorhynchus australis     |     148|         148|
+|Larus atlanticus             |     149|         149|
+|Larus dominicanus            |     150|         150|
+|Macronectes giganteus        |     151|         151|
+|Orcinus orca                 |     152|         152|
+|PESCA                        |     153|          NA|
+|Phalacrocorax atriceps       |     154|         153|
+|Phalacrocorax magellanicus   |     155|         154|
+|Phalacrocorax olivaceus      |     156|         155|
+|Pleurobranchaea maculata     |     157|         156|
+|Procellaria aequinoctialis   |     158|         157|
+|Raja flavirostris            |     159|         158|
+|Renilla sp                   |     160|         159|
+|Spheniscus magellanicus      |     161|         160|
+|Squatina guggenheim          |     162|         161|
+|Sterna hirundinacea          |     163|         162|
+|Tachyeres leucocephalus      |     164|         163|
+|Thalassarche melanophris     |     165|         164|
+|Thalasseus maximus           |     166|         165|
+
+Table: Species numbers reference for the food web figure S1 and S2
 
 
-
-
-
+![Non fishing food web. The network is ordered and colored by trophic level in the y axis, the x axis represent different modules calculated with diet weights. Arrows represent trophic interaction between nodes, and the direction indicates energy and biomass fluxes.](Figures/non-fishing_wmodular_network.eps)
 
 
 

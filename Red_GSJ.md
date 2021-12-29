@@ -80,9 +80,9 @@ productive area in Argentina's waters where the fisheries coexist with
 big aggregations of marine mammals and seabirds\' colonies, oil
 extraction and touristic activity [@Yorio2009]. The local fish
 assemblage has low redundancy, where each ecological role was
-accomplished, on average, by one species [@RinconDiaz2021].
+accomplished, on average, by one species [@Rincon-Diaz2021].
 Likewise, it was reported that bottom trawl fishery erodes fish
-functional diversity, leading towards homogenization [@RinconDiaz2021]. 
+functional diversity, leading towards homogenization [@Rincon-Diaz2021]. 
 In the shrimp fishery, 81 species are incidentally caught and the
 hake was described as "dominant" or "abundant" species in almost 60% of
 the catches [@Gongora2012]. As store space is limited and shrimp
@@ -138,7 +138,7 @@ equal one.
 To study the impact of the fishery in the SJG ecosystem, we constructed
 a second food web including a new node ("fishery") and new interactions.
 We used shrimp fisheries records to generate a list of species caught by
-trawl nets (e.g. De La Garza et al., 2010, 2011, 2013). For all the
+trawl nets [@DeLaGarza2010, @DeLaGarza2011, @DeLaGarza2013]. For all the
 species in the list, an interaction was added assigning the new node
 "fishery" as a consumer and the species caught as a resource. To include
 the trophic interactions originated by discard production, discard
@@ -155,7 +155,7 @@ species in terms of the degree, relative biomass and taxon
 representation. Arrows represent energy and biomass fluxes direction,
 yellow arrows represent fluxes produced by the fishery activity (capture
 and discard consumption). The image was obtained with permission from
-Dans et al., 2021.](Figures/Figure2.png)
+@Dans2021.](Figures/Figure2.png)
 
 <!-- ![Food webs of the non-fishing model (a) and of the fishing
 model (b). Each network is ordered and colored by trophic level. Arrows
@@ -171,7 +171,7 @@ Weighted: we used the percentage of consumption of each prey to weigh
 the links. The latter gives more importance to the preferred prey. The
 metrics were: The mean trophic level (mTL); since it was proposed as an
 indicator of the health of the system [@Pauly2005]. Food webs
-with mTL are supposed to be less stable [@Borrelli2014] and Lower mTL
+with high mTL are supposed to be less stable [@Borrelli2014] and lower mTL
 means that there are fewer steps between a species and a basal resource
 indicating a more energy-efficient system [@Olivier2019]. The
 level of Omnivory (O); defined as the percentage of nodes consuming at
@@ -292,6 +292,7 @@ lobster in third place (Table 1). These species were also located in the
 middle of the network in terms of trophic levels, 3.7, 3.1, 2.7,
 respectively. The mean trophic level of the fished network was 3.0.
 
+\newpage
 
   Type         metric       Fishing Median   non-fishing Median   Median difference   Pooled sd   Effect Size
   ------------ ------------ ---------------- -------------------- ------------------- ----------- -------------
@@ -356,49 +357,11 @@ and almost five trophic levels. It has several top predator populations
 which include many colonies of marine mammals; sea elephants, sea lions,
 dolphins, orcas, and also marine birds and sharks. The importance of top
 predators is given by their trophic function, and their loss affects the
-uniqueness of the system [@Navia2016]. Diverse top predators
-populations are not frequently found in other coastal systems
-[Agnetta2019] and their depletion is a common consequence
-of overexploitation [@Baum2003; @Bearzi2008; @Lotze2011]. In SJG several protected areas were built to protect top predator
-colonies [@Yorio2009] and some populations were reported to be
-increasing in number[@Reyes2006; @Lisnizer2011; @Yorio2020]. Other top predator populations like sharks have no
-formal protection and its populations were reported to be decreasing
-[@Irigoyen2016].
+uniqueness of the system [@Navia2016]. Diverse top predators populations are not frequently found in other coastal systems [Agnetta2019] and their depletion is a common consequence of overexploitation [@Baum2003; @Bearzi2008; @Lotze2011]. In SJG several protected areas were built to protect top predator colonies [@Yorio2009] and some populations were reported to be increasing in number[@Reyes2006; @Lisnizer2011; @Yorio2020]. Other top predator populations like sharks have no formal protection and its populations were reported to be decreasing [@Irigoyen2016].
 
-The SJG food web was previously described using two distinct approaches:
-stable isotope analysis (SIA) [@Gaitan2012] and an Ecopath model
-[@Sanchez2008]. And the main results using a topological approach
-match several results from these previous descriptions: The length of
-the food web (i.e. the total number of trophic levels) and trophic level
-values of the most abundant nodes. For example: the maximum trophic
-level described using stable isotope analysis was 4.7 for *Parona]
-signata* [@Gaitan2012] and through Ecopath was 4.5 for the cetaceans
-[@Sanchez2008]. These species had trophic levels of 4 and 4.4 on
-average in our models, respectively. Trophic levels of important species
-such anchovy (3.1), shrimp (3.08) and squat lobster (2.6) were similar
-to what was reported by @Gaitan2012 (2.9, 3.4, 3.1, respectively) and
-@Sanchez2008 (3.2, 2.6, 2.2, respectively). Also, trophic
-levels values match values estimated using SIA in particular studies of
-the area (e.g.: the squat lobster: 2.5 in @Funes2018,
-*Acanthistius patachonicus*: 3.8 and 3.9 in @Funes2019; *N,
-cepedianus* TP: 4.5 [@Funes2021]).
+The SJG food web was previously described using two distinct approaches: stable isotope analysis [@Gaitan2012] and an Ecopath model [@Sanchez2009]. And the main results using a topological approach match several results from these previous descriptions: The length of the food web (i.e. the total number of trophic levels) and trophic level values of the most abundant nodes. For example: the maximum trophic level described using stable isotope analysis was 4.7 for *Parona signata* [@Gaitan2012] and through Ecopath was 4.5 for the cetaceans [@Sanchez2009]. These species had trophic levels of 4 and 4.4 on average in our models, respectively. Trophic levels of important species such anchovy (3.1), shrimp (3.08) and squat lobster (2.6) were similar to what was reported by @Gaitan2012 (2.9, 3.4, 3.1, respectively) and @Sanchez2009 (3.2, 2.6, 2.2, respectively). Also, trophic levels values match values estimated using SIA in particular studies of the area (e.g.: the squat lobster: 2.5 in @Funes2018, *Acanthistius patachonicus*: 3.8 and 3.9 in @Funes2019).
 
-In terms of degree, the network was primarily dominated by medium
-trophic level crustaceans, the shrimp, the squat lobster*,* and
-amphipods. The three trophic species are also dominant in abundance
-[@Bellegia2019; @Roux2008; @MoriondoDonovaro2018], and are common prey to almost all fishes on the network [@Sánchez1996; @Copello2008; @DeLaGarza2017]. The current importance of the squat lobster in the system [@Bellegia2019] does not match the description of the system
-performed 30 years ago [@Sánchez1996], and this change was
-reported by the entire area [@Alonso2019; Diez2016a]. The
-squat lobster occurs in pelagic and benthic ecotypes [@Rayner1935], and
-in both environments they are important in terms of biomass [@Diez2016a; @Ravalli]. Each ecotype feeds in the environment where
-it inhabits; pelagic forms feed on pelagic primary producers and benthic
-forms in benthic animals [@Funes2018]. The squat lobster captures
-energy and biomass from both environments and being a key prey item,
-could be the main energy flux between the base and the top of the
-system, connecting primary producers directly to top predators. Such
-phenomena shortens the effective size of the web and turns more
-efficiently the energetic fluxes throughout the web [@Diez2016a;
-@Lovrich2011].
+In terms of degree, the network was primarily dominated by medium trophic level crustaceans, the shrimp, the squat lobster, and amphipods. The three trophic species are also dominant in abundance [@Bellegia2019; @Roux2008; @MoriondoDonovaro2018], and are common prey to almost all fishes on the network [@Sanchez1996; @Copello2008; @DeLaGarza2017]. The current importance of the squat lobster in the system [@Bellegia2019] does not match the description of the system performed 30 years ago [@Sanchez1996], and this change was reported by the entire area [@Alonso2019; Diez2016a]. The squat lobster occurs in pelagic and benthic ecotypes, and in both environments they are important in terms of biomass [@Diez2016a; @Ravalli2013]. Each ecotype feeds in the environment where it inhabits; pelagic forms feed on pelagic primary producers and benthic forms in benthic animals [@Funes2018]. The squat lobster captures energy and biomass from both environments and being a key prey item, could be the main energy flux between the base and the top of the system, connecting primary producers directly to top predators. Such phenomena shortens the effective size of the web and turns more efficiently the energetic fluxes throughout the web [@Diez2016a; @Lovrich2011].
 
 In the fishing food web, the hake showed the higher values of degree,
 seconded by the shrimp and the squat lobster. This not only puts in
@@ -409,17 +372,12 @@ of this phenomena are mainly reflected on the level of omnivory (i), the
 changes on stability of the system (ii), and the changes on the main
 energy fluxes (iii).
 
-
-\(i\) The level of omnivory was already high in the non-fishing system
+(i) The level of omnivory was already high in the non-fishing system
 compared to other marine systems [@Link2002a; @Marina2018a] and increased in the fished system. This is a
 consequence both of fishery consuming resources from different trophic
-levels [@Bieg2018] and of the discard consumption [@Shephard2014). There is a current debate on whether omnivory favors or not
-stability, the latest studies indicate that strong omnivory levels could
-destabilize trophic networks, whereas weak to moderate strength levels
-of omnivory can confer stability to food webs [@Kratina2012]. In
-this study, the fishing model presented higher levels of omnivory
-accompanied with lower levels of modularity, and lower stability values,
-supported by the Quasi sign-stability difference between networks (ii).
+levels [@Bieg2018] and of the discard consumption [@Shephard2014). There is a current debate on whether omnivory favours or not
+stability, the latest studies indicate that strong omnivory levels could destabilize trophic networks, whereas weak to moderate strength levels of omnivory can confer stability to food webs [@Kratina2012]. In this study, the fishing model presented higher levels of omnivory accompanied with lower levels of modularity, and lower stability values, supported by the Quasi sign-stability difference between networks <!-- SO what's the conclusion is or isnt stabilizing -->
+(ii).
 @Navia2012 described two major mechanisms by which fisheries
 can threaten the stability of a network: by transforming a regular
 species into a key species, followed by an anthropic pressure over the
@@ -491,7 +449,11 @@ We would like to thank Pablo Yorio for his feedback as a key expert of
 San Jorge Gulf, his recommendations and contributions on this paper.
 Several other experts also contributed with their criteria to revise the
 reconstruction, such as Damián Vales, Nicolás Ortiz, Gregorio Biggatti,
-Maria Martha Pitu Mendez,
+Maria Martha Pitu Mendez.
+
+## Data availability
+
+The source code and data is available at zenodo and Github <https://github.com/EcoComplex/NetworkGolfoSanJorge>. 
 
 ## Bibliography
 

@@ -112,22 +112,40 @@ as.numeric(V(g1)["PESCA"])
 
 # Names table
 g2 <- g
-knitr::kable( tibble(Number=as.numeric(V(g2)),Species=V(g2)$name   ))
+nonf <- tibble(Number=as.numeric(V(g2)),Species=V(g2)$name)   
+knitr::kable( nonf )
 
 # Change names to numbers
 #
 V(g2)$name <- as.numeric(V(g2))
-plotTrophLevel(g2,modules =FALSE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11), vertexSizeFactor = 0, vertexSizeMin = 15, vertex.label.color="white")
+#plotTrophLevel(g2,modules =FALSE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11), vertexSizeFactor = 0, vertexSizeMin = 15, vertex.label.color="white")
+
+# Figure supplement S2
+#
+set.seed(112233)
+modw <- spinglass.community(g2)
+plotTrophLevel(g2,modules =TRUE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11), vertexSizeFactor = 0, vertexSizeMin = 15, vertex.label.color="white",community_obj = modw)
 
 # FISH Plot interactively with numbers
 # Names table
 g2 <- g1
-knitr::kable( tibble(Number=as.numeric(V(g2)),Species=V(g2)$name   ))
+fish <- tibble(Number=as.numeric(V(g2)),Species=V(g2)$name)   
+kk <- left_join(fish,nonf, by="Species")
+
+knitr::kable( kk %>% select(Species, Number.x,Number.y) %>% rename(Fishing=Number.x, Non_fishing=Number.y) )
+
 
 # Change names to numbers
 #
 V(g2)$name <- as.numeric(V(g2))
-plotTrophLevel(g2,modules =FALSE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11), vertexSizeFactor = 0, vertexSizeMin = 15, vertex.label.color="white")
+#plotTrophLevel(g2,modules =FALSE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11), vertexSizeFactor = 0, vertexSizeMin = 15, vertex.label.color="white")
+
+# Figure supplement S2
+#
+set.seed(112233)
+modw <- spinglass.community(g2)
+plotTrophLevel(g2,modules =TRUE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11), vertexSizeFactor = 0, vertexSizeMin = 15, vertex.label.color="white",community_obj = modw)
+
 
 # convert to PNG
 #
