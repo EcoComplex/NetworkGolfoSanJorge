@@ -32,41 +32,10 @@ The network presented 165 species organized in five trophic levels. Metrics show
 
 ## Introduction
 
-Fisheries are an important human activity and they can be found in
-almost every coastal system worldwide [@Pauly1995]. They are an
-essential source of animal protein for human consumption [@FAO2018] and
-employ a quarter of a billion people [@Teh2013]. On the other
-hand, demersal fisheries are one of the top anthropic stressors in
-marine environments [@Halpern2007], capable of modifying the
-habitat and the community within it [@Kaiser2002]. The
-selectivity of the fishing gear, together with organism traits such as body size,
-lifespan and habits determine how vulnerable species are to fishing
-activity. Fisheries, in the long-term, can alter the abundance and
-diversity of species [@Hiddking2020] which change prey
-composition and the mean trophic level of predators [@Funes2019; @Preciado2019; @Su2021]. Therefore, fisheries can modify
-predator-prey links as well as species composition, and therefore the
-structure of the ecosystem.
+Fisheries are an important human activity and they can be found in almost every coastal system worldwide [@Pauly1995]. They are an essential source of animal protein for human consumption [@FAO2018] and employ a quarter of a billion people [@Teh2013]. On the other hand, demersal fisheries are one of the top anthropic stressors in marine environments [@Halpern2007], capable of modifying the habitat and its biological community [@Kaiser2002]. The selectivity of the fishing gear, together with organism traits such as body size, lifespan and habits determine how vulnerable species are to fishing activity. Fisheries, in the long-term, can alter the abundance and diversity of species [@Hiddking2020] which could change trophic relationships and the trophic level of predators [@Funes2019; @Preciado2019; @Su2021], modifying the structure of the ecosystem.
 
-Food webs are a form of network organization in nature which
-characterizes the trophic interactions (i.e. consumer-resource
-relationships) among species in an ecosystem [@Bascompte2009]. The
-first step in food web analysis is to reconstruct the links between
-species, which describe network topology. The topology or the network
-structure has two components: nodes (standing for the species or groups
-of species that share predators and preys), and links connecting nodes
-which represent the ecological interactions between the species.
-Predator-prey interactions in networks represent a map of the possible
-configuration of matter and energy fluxes in the ecosystem. And such
-interactions are the major responsible for the stability and dynamics of
-the ecosystem [@Allesina2008]. To describe and compare food
-webs, a useful approach is through network metrics. Network metrics,
-such as the level of omnivory of the system and the mean trophic level,
-are features of the food web which inform on the dynamics and stability
-of the system [@Fortuna2010; @Kefi2015].
+Fisheries can change the relative energy demands of a community [@Jennings2008] and alterations in the fluxes configuration can lead to changes in the stability of the food web [@Ruiter1995]. Food webs characterize the trophic interactions (i.e. consumer-resource relationships) among species in an ecosystem [@Bascompte2009]. The first step in food web analysis is to reconstruct the links between species, which describe network topology. The topology or the network structure has two components: nodes (standing for the species or groups of species), and links connecting nodes that represent the ecological interactions between the species. To describe and compare food webs, a useful approach is through network metrics related to stability and resilience of the system, like the level of omnivory [@Wootton2017], the mean trophic level [@Borrelli2014], modularity [@Stouffer2011] and other metrics [@Marquez-Velasquez2021]. 
 
-Fisheries can change the relative energy demands of a community
-[@Jennings2008] and alterations in the fluxes configuration can
-lead to changes in the stability of the network [@Ruiter1995].
 Bottom-trawl fisheries in northern Patagonia have mainly developed since
 the late 70s [@Gongora2012]. Main fishing targets are the
 Argentine hake; *Merluccius hubbsi,* and the Argentine red shrimp;
@@ -193,7 +162,7 @@ trapped in local maxima configurations [@Reichardt2006].
 
 Finally, we calculated the Quasi sign-stability (QSS) index, which is
 the proportion of stable networks using 10000 randomized Jacobians and
-keeping the predator prey structure fixed [@Allesina2008a].
+keeping the predator prey structure fixed [@Allesina2008].
 The formulas for the two versions of the metrics are explained in the
 supplementary methods.
 
