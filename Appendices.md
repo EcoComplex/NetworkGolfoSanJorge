@@ -52,12 +52,13 @@ where $w = \sum_i {k_i^{in}}$ , which is the total weight.
 The Jacobian $J$, so-called community matrix [@May1973], represents the population-level effect of a change in one species’ density on any other species, including the dependence on its own density (self-regulation), at an equilibrium. A system is locally stable if the Jacobian $J$ has all its eigenvalues negative, thus the maximal eigenvalue has to be less than zero for a system to be locally stable. The signs of the elements of $J$ are given by the predator-prey structure of the food web, but the magnitude of the elements are unknown. Following previous analysis [@Monteiro2016;@Borrelli2015a], we estimated the unknown magnitudes by drawing the predator-prey interactions from a uniform distribution ranging from -10 to 0, the prey-predator interactions from 0 to 0.1, and from 0 to -1 for the self-regulation effect. This implies that the predator effect on the prey is bigger than the effect of the prey on the predator, and that the self-regulation or self-damping effect, that scales the dynamic's return time, is generally smaller than the predator-prey effect. Other parametrizations are possible but they give very similar results (not shown). When the weights of the food web are present they are used as a factor for each of the magnitudes, so the distributions for predator-prey interacions goes from -10*$a_{ij}$ to 0,  and the same is applied to the other types of interactions.  The Quasi Sign Stability (QSS) is the proportion of stable matrices, with negative maximal eingenvale, obtained for 10000 randomizations. 
 
 
+## References
+
+<div id="refs"></div>
 
 
-# Supplementary Table S2
+## Supplementary Table S1
 
-Table S2: Trophic level calculated as specified in Supplementary methods
-for the two food webs.
 
   **Species**                      **Fishing**   **non-fishing**
   -------------------------------- ------------- -----------------
@@ -228,11 +229,12 @@ for the two food webs.
   *POM*                            1.000         1.000
   *phytoplankton*                  1.000         1.000
 
+Table: Trophic level calculated as specified in Supplementary methods
+for the two food webs.
 
+\newpage
 
-
-
-# Supplementary Table S3
+## Supplementary Table S2
 
 |Species                      | Fishing| Non_fishing|
 |:----------------------------|-------:|-----------:|
@@ -388,7 +390,7 @@ for the two food webs.
 |Larus dominicanus            |     150|         150|
 |Macronectes giganteus        |     151|         151|
 |Orcinus orca                 |     152|         152|
-|PESCA                        |     153|          NA|
+|FISHERY                      |     153|          NA|
 |Phalacrocorax atriceps       |     154|         153|
 |Phalacrocorax magellanicus   |     155|         154|
 |Phalacrocorax olivaceus      |     156|         155|
@@ -406,13 +408,12 @@ for the two food webs.
 Table: Species numbers reference for the food web figure S1 and S2
 
 
+![Fishing food web. The network is ordered and colored by trophic level in the y axis, the x axis represent different modules calculated with diet weights. Arrows represent trophic interaction between nodes, and the direction indicates energy and biomass fluxes.](Figures/fishing_wmodular_network.eps)
+
 ![Non fishing food web. The network is ordered and colored by trophic level in the y axis, the x axis represent different modules calculated with diet weights. Arrows represent trophic interaction between nodes, and the direction indicates energy and biomass fluxes.](Figures/non-fishing_wmodular_network.eps)
 
 
 
-## References
-
-<div id="refs"></div>
 
 
 
