@@ -36,11 +36,11 @@ Fisheries are an important human activity and they can be found in almost every 
 
 Fisheries can change the relative energy demands of a community [@Jennings2008] and alterations in the fluxes configuration can lead to changes in the stability of the food web [@Ruiter1995]. Food webs characterize the trophic interactions (i.e. consumer-resource relationships) among species in an ecosystem [@Bascompte2009]. The first step in food web analysis is to reconstruct the links between species, which describe network topology. The topology or the network structure has two components: nodes (standing for the species or groups of species), and links connecting nodes that represent the ecological interactions between the species. To describe and compare food webs, a useful approach is through network metrics related to stability and resilience of the system, like the level of omnivory [@Wootton2017], the mean trophic level [@Borrelli2014], modularity [@Stouffer2011] and other metrics [@Marquez-Velasquez2021]. However, an accumulating body of evidence suggests that the relationship between structural properties and stability can only be understood if the strength of interactions are considered [@Neutel2014; @Neutel2016; @Saravia2021].
 
-Bottom-trawl fisheries in northern Patagonia have mainly developed since the late 70s [@Gongora2012]. Main fishing targets are the Argentine hake; *Merluccius hubbsi,* and the Argentine red shrimp; *Pleoticus muelleri*, being the shrimp fishery the biggest crustacean fishery on the south occidental Atlantic in terms of abundance and revenues [@Gongora2012]. For the past 30 years, the main fishing activity in northern Patagonia has taken place in San Jorge Gulf (SJG), a semi-enclosed basin of approximately 230 km of latitudinal opening and approximately 150 km longitudinal wide (Figure 1). SJG is a particularly productive area in Argentina's waters where the fisheries coexist with big aggregations of marine mammals and seabirds' colonies, oil extraction and touristic activity [@Yorio2009]. The local fish assemblage has low redundancy, where each ecological role was accomplished, on average, by one species [@Rincon-Diaz2021]. Likewise, it was reported that bottom trawl fishery erodes fish functional diversity, leading towards homogenization [@Rincon-Diaz2021]. In the shrimp fishery, 81 species are incidentally caught and the hake was described as "dominant" or "abundant" species in almost 60% of the catches [@Gongora2012]. As store space is limited and shrimp is better priced than hake, the latter was also dominant in discards composition [@Gongora2012]. Fishes, birds and crustaceans of the area were reported to feed on discards [@Gonzalez-Zevallos2011; @Vinuesa2007; @Belleggia2016; @Pasti2021]. However, how discard biomass impacts the local community remains unaddressed, and this phenomenon requires an integrated ecosystem approach, like the one offered by food web theory [@Marquez-Velasquez2021].
+Bottom-trawl fisheries in northern Patagonia have mainly developed since the late 70s [@Gongora2012]. Main fishing targets are the Argentine hake; *Merluccius hubbsi*, and the Argentine red shrimp; *Pleoticus muelleri*, being the shrimp fishery the biggest crustacean fishery on the south occidental Atlantic in terms of abundance and revenues [@Gongora2012]. For the past 30 years, the main fishing activity in northern Patagonia has taken place in San Jorge Gulf (SJG), a semi-enclosed basin of approximately 230 km of latitudinal opening and approximately 150 km longitudinal wide (Figure 1). SJG is a particularly productive area in Argentina's waters where the fisheries coexist with big aggregations of marine mammals and seabirds' colonies, oil extraction and touristic activity [@Yorio2009]. The local fish assemblage has low redundancy, where each ecological role was accomplished, on average, by one species [@Rincon-Diaz2021]. Likewise, it was reported that bottom trawl fishery erodes fish functional diversity, leading towards homogenization [@Rincon-Diaz2021]. In the shrimp fishery, 81 species are incidentally caught and the hake was described as "dominant" or "abundant" species in almost 60% of the catches [@Gongora2012]. As store space is limited and shrimp is better priced than hake, the latter was also dominant in discards composition [@Gongora2012]. Fishes, birds and crustaceans of the area were reported to feed on discards [@Gonzalez-Zevallos2011; @Vinuesa2007; @Belleggia2016; @Pasti2021]. However, how discard biomass impacts the local community remains unaddressed, and this phenomenon requires an integrated ecosystem approach, like the one offered by food web theory [@Marquez-Velasquez2021].
 
 Information on the functionality of SJG is scarce and its understanding has economic and social importance for the region. Therefore, it was set as a priority in a national research initiative aiming to promote an ecosystem based management of the resources [@Dans2021]. In addition to this local interest, the theoretical description of the food web structure and its modifications by anthropic stressors are a fundamental question worldwide. This study aims to achieve a high-resolved food web description of SJG and evaluate if the bottom-trawl industrial fishery alters network structure and stability.
 
-![Study site location in Patagonia Argentina, South Atlantic Sea. Zones shaded in white are the marine protected areas (MPA)](Figures/Figure1.pdf) 
+![Study site location in Patagonia Argentina, South Atlantic Sea. Zones marked in white are the marine protected areas (MPA)](Figures/Figure1.jpg) 
 
 
 ## Methods
@@ -104,45 +104,15 @@ Table: Degree values (i.e. number of total interaction of each node) for the top
 
 ## Results
 
-<!--From the reviewed papers a total of 139 studies were effectively used to build the SJG food web (Supplementary table S1).--> 
+The 139 studies used to build both SJG food webs are available in supplementary table S3.
+The non-fishing food web contained 165 trophic nodes, from which 115 were species and 50 were trophospecies. Nodes were connected by 1013 trophic links (Supplementary figure S2). The percentage of top predators was 16%, intermediate species 78% and basal species 6%. The network presented almost five trophic levels, considering the top predator *Orcinus Orca* with the maximum trophic level of 4.9, closely followed by *Notorynchus cepedianus* and *Mirounga leonina* (Supplementary figure S2, and supplementary table S1). The top three more connected nodes were the Argentine red shrimp, the squat lobster *Munida gregaria,* the Argentine squid and, with the same degree, Amphipoda grouped as trophospecies (Supplementary figure S2 and Table 1). These nodes were all crustaceans, located in the middle of the trophic network in terms of trophic level (3, 2.5, 3.6 and 2 respectively). The mean trophic level of the system was 2.9.
 
-The non-fishing food web contained 165 trophic nodes, from which 115 were species and 50 were
-trophospecies. Nodes were connected by 1013 trophic links (Figure 2a).
-The percentage of top predators was 16%, intermediate species 78% and
-basal species 6%. The network presented almost five trophic levels,
-considering the top predator *Orcinus Orca* with the maximum trophic
-level of 4.9, closely followed by *Notorynchus cepedianus* and *Mirounga
-leonina* (Figure 2b, and supplementary table S2). The top three more
-connected nodes were the Argentine red shrimp, the squat lobster *Munida
-gregaria,* the Argentine squid and at the same place the Amphipods,
-grouped as trophospecies (Figure 2b and Table 1). These nodes were all
-crustaceans, located in the middle of the trophic network in terms of
-trophic level (3, 2.5, 3.6 and 2 respectively). The mean trophic level
-of the system was 2.9. (Figure 2b).
-
-![Comparison of the metrics for food-webs under fishing and
-non- fishing scenarios. The colored points are randomizations of each
-food web keeping the number of links of each trophospecies constant, the
-weighted versions take into account the diets of the predators as link
-weight. The blank dots are the values of the empiric food webs, and the
-black lines the median of the randomized webs. Extreme values were
-eliminated from the plots for better visualization.](Figures/weighed_curveBall_metrics.png)
+![Comparison of the metrics for food-webs under fishing and non-fishing scenarios. The coloured points are randomizations of each food web keeping the number of links of each trophospecies constant, the weighted versions take into account the diets of the predators as link weight. The blank dots are the values of the empiric food webs, and the black lines the median of the randomized webs. Extreme values were eliminated from the plots for better visualization.](Figures/weighed_curveBall_metrics.png)
 
 
-The fishing food web contained one extra trophic node and 71 extra
-trophic links, resulting in 166 nodes (115 species and 51
-trophospecies), connected by 1084 links (Figure 2b). The extra node was
-the fishery and the new links represented all new interactions enabled
-by fishing activity: the capture of species and the consumption of
-discards. The percentage of top predators was similar to the non-fishing
-food web (16%, intermediate species 78% and basal species 6%). The top
-predator was also *O. Orca* but its trophic level was a little higher: 5
-*Notorynchus cepedianus* and *M. leonina* were maintained as second and
-third top predators, respectively (Table 1; Supplementary table S2). The
-more connected species was different from the non-fishing model, being
-the hake in the first place, the shrimp in the second and the squat
-lobster in third place (Table 1). These species were also located in the
-middle of the network in terms of trophic levels, 3.7, 3.1, 2.7,
+The fishing food web contained one extra trophic node and 71 extra trophic links, resulting in 166 nodes (115 species and 51 trophospecies), connected by 1084 links (Supplementary figure S1). The extra node was the fishery and the new links represented all new interactions enabled by fishing activity: the capture of species and the consumption of discards. The percentage of top predators was practically equal to the non-fishing food web (16%, intermediate species 78% and basal species 6%). The top predator was also *O. Orca* but its trophic level was a little higher: 5
+*Notorynchus cepedianus* and *M. leonina* remained as the second and third predators, respectively (Table 1; Supplementary table S1). The
+more connected species was different from the non-fishing model, being the hake in the first place, the shrimp in the second and the squat lobster in third place (Table 1). These species were also located in the middle of the network in terms of trophic levels: 3.7, 3.1, 2.7,
 respectively. The mean trophic level of the fished network was 3.0.
 
 \newpage
@@ -161,124 +131,39 @@ values of the fishing and non-fishing model. For each metric, the median
 difference (median Diff), pooled standard deviation and the magnitude of
 the effect size, estimated as the median difference over the pooled sd.
 
-The topological metrics between the fishing and the non-fishing food
-webs were different (mean trophic level, modularity and omnivory
-coefficient: Anderson Darling test *p=*0.00). The biggest effect size in
-absolute value was observed for modularity and the smallest, for
-omnivory (Table 2, Figure 3). In terms of stability, the fishing food
-web was less stable than the non-fishing (Quasi sign-stability *p*\<
-2.2e-16, Figure 4). The results for the diet weighted metrics were
-similar to the previous ones: all differences were significant and the
-effect sizes had the same ordering but were in general smaller than the
-unweighted ones. Regarding QSS, the differences between food webs were
-bigger than for the unweighted. Notice that only for the weighted
-omnivory, empirical food webs values fall outside of the range of the
-null model values (Figure 3). The weighted modularity was negative
-indicating that the link weights between the modules are larger than the
+There are significant differences between the fishing and the non-fishing food webs topological metrics (mean trophic level, modularity and omnivory
+coefficient: Anderson Darling test *p=*0.00). The biggest effect size in absolute value was observed for modularity and the smallest, for omnivory (Table 2, Figure 3). In terms of stability, the fishing food web was less stable than the non-fishing (Quasi sign-stability *p*\< 2.2e-16, Figure 4). The results for the diet weighted metrics were similar to the previous ones: all differences were significant and the effect sizes had the same ordering but were in general smaller than the unweighted ones. Regarding QSS, the differences between food webs were bigger than for the unweighted. Notice that only for the weighted omnivory, empirical food webs values fall outside of the range of the null model values (Figure 3), probably due to the randomization of predators diet. The weighted modularity was negative indicating that the link weights between the modules are larger than the
 weights inside the modules.
 
-![Quasi Sign Stability (QSS) values of the fishing and non-fishing food webs. QSS is a measure of the
-capacity of the system to return to equilibrium after a perturbation,
-the lower it is the less capacity the system has. Unweighted values
-consider only the topological structure of the food web, the weighted
-values take into account the diets of the species. Values are presented
-with their standard deviation.](Figures/QSS.png) 
+![Quasi Sign Stability (QSS) values of the fishing and non-fishing food webs. QSS is a measure of the capacity of the system to return to equilibrium after a perturbation, the lower it is the less capacity the system has. Unweighted values consider only the topological structure of the food web, the weighted values take into account the diets of the species. Values are presented with their standard deviation.](Figures/QSS.png)
 
 
 ## Discussion
 
-We found that fishery activities in the San Jorge Gulf (SJG) reduced the
-stability of the food web. Recent results suggest that unweighted
-topological metrics can not detect neither alterations in fluxes
-[@Kortsch2021] nor changes in stability [@Saravia2021]. In our
-study, both the weighted and unweighted metrics gave the same pattern,
-with quasi-sign stability being the metric with the most straightforward
-interpretation that showed the lowering of stability.
+We found that fishery activities in the San Jorge Gulf (SJG) reduced the stability of the food web. Recent results suggest that unweighted topological metrics can not detect neither alterations in fluxes [@Kortsch2021] nor changes in stability [@Saravia2021]. In our study, both the weighted and unweighted metrics gave the same pattern, with quasi-sign stability being the metric with the most straightforward interpretation that showed the lowering of stability.
 
-The present study constitutes the first attempt to construct a
-high-resolved food web of the SJG ecosystem. We collected detailed
-information for several low, medium and high trophic level species which
-resulted in a speciose food web near the most resolved ones
-[@Marina2018a]. SJG is a key feeding, reproductive and nursing area
-for the main lucrative fisheries in Argentina. The description of our
-network exposes the possible flows of matter and energy in the studied
-system, which is considered a fundamental requirement in the Ecosystem
-Approach of fisheries (Ecosystem Principles Advisory Panel, 1999).
+Moreover, the present study constitutes the first attempt to construct a high-resolved food web of the SJG ecosystem. We collected detailed information for several low, medium and high trophic level species, which resulted in a speciose food web between the most resolved ones [@Marina2018a]. SJG is a key feeding, reproductive and nursing area for the main lucrative fisheries in Argentina. The description of our network exposes the possible flows of matter and energy in the studied system, which is considered a fundamental requirement in the Ecosystem Approach of fisheries (Ecosystem Principles Advisory Panel, 1999).
 
-The food web of SJG is a complex system with more than a hundred species
-and almost five trophic levels. It has several top predator populations
-which include many colonies of marine mammals; sea elephants, sea lions,
-dolphins, orcas, and also marine birds and sharks. The importance of top
-predators is given by their trophic function, and their loss affects the
-uniqueness of the system [@Navia2016]. Diverse top predators populations are not frequently found in other coastal systems [Agnetta2019] and their depletion is a common consequence of overexploitation [@Baum2003; @Bearzi2008; @Lotze2011]. In SJG several protected areas were built to protect top predator colonies [@Yorio2009] and some populations were reported to be increasing in number[@Reyes2006; @Lisnizer2011; @Yorio2020]. Other top predator populations like sharks have no formal protection and its populations were reported to be decreasing [@Irigoyen2016].
+The food web of SJG is a complex system with more than a hundred species and almost five trophic levels. It has several top predator populations which include many colonies of marine mammals; sea elephants, sea lions, dolphins, orcas, and also marine birds and sharks. The importance of top predators is given by their trophic function, and their loss affects the uniqueness of the system [@Navia2016]. Diverse top predators populations are not frequently found in other coastal systems [Agnetta2019] and their depletion is a common consequence of overexploitation [@Baum2003; @Bearzi2008; @Lotze2011]. In SJG several protected areas were built to protect top predator colonies (Figure 2) [@Yorio2009] and some populations were reported to be increasing in number[@Reyes2006; @Lisnizer2011; @Yorio2020]. Other top predator populations like sharks have no formal protection and its populations were reported to be decreasing [@Irigoyen2016].
 
-The SJG food web was previously described using two distinct approaches: stable isotope analysis [@Gaitan2012] and an Ecopath model [@Sanchez2009]. And the main results using a topological approach match several results from these previous descriptions: The length of the food web (i.e. the total number of trophic levels) and trophic level values of the most abundant nodes. For example: the maximum trophic level described using stable isotope analysis was 4.7 for *Parona signata* [@Gaitan2012] and through Ecopath was 4.5 for the cetaceans [@Sanchez2009]. These species had trophic levels of 4 and 4.4 on average in our models, respectively. Trophic levels of important species such anchovy (3.1), shrimp (3.08) and squat lobster (2.6) were similar to what was reported by @Gaitan2012 (2.9, 3.4, 3.1, respectively) and @Sanchez2009 (3.2, 2.6, 2.2, respectively). Also, trophic levels values match values estimated using SIA in particular studies of the area (e.g.: the squat lobster: 2.5 in @Funes2018, *Acanthistius patachonicus*: 3.8 and 3.9 in @Funes2019).
+The SJG food web was previously described using two distinct approaches: stable isotope analysis [@Gaitan2012] and an Ecopath modelling [@Sanchez2009]. Our results using a network approach match several results from these previous descriptions: the length of the food web (i.e. maximum trophic levels) and trophic level values of the most abundant nodes. For example: the maximum trophic level described using stable isotope analysis was 4.7 for *Parona signata* [@Gaitan2012] and through Ecopath was 4.5 for the cetaceans [@Sanchez2009], we found these species had trophic levels of 4 and 4.4, respectively. Trophic levels of important species such anchovy *Engraulis anchoita* (3.1), shrimp *Pleoticus muelleri* (3.08) and squat lobster *Munida gregaria* (2.6) were similar to what was reported by @Gaitan2012 (2.9, 3.4, 3.1, respectively) and @Sanchez2009 (3.2, 2.6, 2.2, respectively). Also, trophic levels values match values estimated using SIA in particular studies of the area (e.g.: the squat lobster: 2.5 in @Funes2018, *Acanthistius patachonicus*: 3.8 and 3.9 in @Funes2019).
 
-In terms of degree, the network was primarily dominated by medium trophic level crustaceans, the shrimp, the squat lobster, and amphipods. The three trophic species are also dominant in abundance [@Belleggia2019; @Roux2009; @delaGarza2017], and are common prey to almost all fishes on the network [@Sanchez1996; @Copello2008; @delaGarza2017]. The current importance of the squat lobster in the system [@Belleggia2019] does not match the description of the system performed 30 years ago [@Sanchez1996], and this change was reported by the entire area [@Alonso2019; Diez2016a]. The squat lobster occurs in pelagic and benthic ecotypes, and in both environments they are important in terms of biomass [@Diez2016a; @Ravalli2013]. Each ecotype feeds in the environment where it inhabits; pelagic forms feed on pelagic primary producers and benthic forms in benthic animals [@Funes2018]. The squat lobster captures energy and biomass from both environments and being a key prey item, could be the main energy flux between the base and the top of the system, connecting primary producers directly to top predators. Such phenomena shortens the effective size of the web and turns more efficiently the energetic fluxes throughout the web [@Diez2016a; @Lovrich2011].
+In terms of degree, the network was primarily dominated by medium trophic level crustaceans, the shrimp, the squat lobster, and amphipods. The three trophic species are also dominant in abundance [@Belleggia2019; @Roux2009; @delaGarza2017], and are common prey to almost all fishes on the network [@Sanchez1996; @Copello2008; @delaGarza2017]. The current importance of the squat lobster in the system [@Belleggia2019] does not match the description of the system performed 30 years ago [@Sanchez1996], and this change was reported for the entire area [@Alonso2019; Diez2016a]. The squat lobster occurs in pelagic and benthic ecotypes, and in both environments it is important in terms of biomass [@Diez2016a; @Ravalli2013]. Each ecotype feeds in the environment where it inhabits; pelagic forms feed on pelagic primary producers and benthic forms in benthic animals [@Funes2018]. The squat lobster captures energy and biomass from both environments and being a key prey item, could be the main energy flux between the base and the top of the system, connecting primary producers directly to top predators. Such phenomena shortens the effective size of the web and turns more efficiently the energetic fluxes throughout the web [@Diez2016a; @Lovrich2011].
 
-In the fishing food web, the hake showed the higher values of degree,
-seconded by the shrimp and the squat lobster. This not only puts in
-perspective the real importance of the hake on the environment but it is
-itself an evidence of the impacts of fishery: enhancing the availability
-of the hake as prey for more trophic guilds and levels. The consequences
-of this phenomena are mainly reflected on the level of omnivory (i), the
-changes on stability of the system (ii), and the changes on the main
-energy fluxes (iii).
+In the fishing food web, the hake *Merluccius hubbsi* showed the higher values of degree, seconded by the shrimp and the squat lobster. This not only puts in perspective the real importance of the hake on the environment but it is itself an evidence of the impacts of fishery: enhancing the availability of the hake as prey for more trophic guilds and levels. The consequences of this phenomena are mainly reflected on the level of omnivory and the changes on stability of the system, and the changes on energy fluxes.
 
-(i) The level of omnivory was already high in the non-fishing system compared to other marine systems [@Link2002a; @Marina2018a] and increased in the fished system. This is a consequence both of fishery consuming resources from different trophic levels [@Bieg2018] and of the discard consumption [@Shephard2014). There is a current debate on whether omnivory favours or not
-stability, the latest studies indicate that strong omnivory levels could destabilize trophic networks, whereas weak to moderate strength levels of omnivory can confer stability to food webs [@Kratina2012]. In this study, the fishing model presented higher levels of omnivory accompanied with lower levels of modularity, and lower stability values, supported by the Quasi sign-stability difference between networks <!-- SO what's the conclusion is or isnt stabilizing -->
-(ii) @Navia2012 described two major mechanisms by which fisheries
-can threaten the stability of a network: by transforming a regular
-species into a key species, followed by an anthropic pressure over the
-"new\'\' key species, or by removing a complete functional level as a
-consequence of a trophic cascade effect [@Pinnegar2002]. In the
-present case, the change observed on hake\'s degree (from N° 12 to N° 1
-in the rank of the fishing model) suggests the SJG is under the first
-scenario described by @Navia2012. Harvesting a key species
-could have a major impact on the food web. Harvested abundant and
-connected species, such as hake (the most abundant fish in the system),
-can potentially spread perturbations through the food web by
-transmitting abundance alterations to a great number of nodes
-[@Perez-Matus2017]. Specifically in an ecosystem with low
-functional diversity where each ecological role is covered by one or a
-few species, and the loss of a species compromises its ecological
-function [@Rincon-Diaz2021]. However, hake increased its degree in the
-fishing model not by direct predation but by its consumption once
-discarded. As discarding is an undesirable practice that is expected to
-tend to be reduced over time, the effects of the fishery on the
-structure of the food web can be reduced by improving fishing practices.
-Changes on the energy fluxes (iii) also showed significant differences
-between fished and non-fishing systems. Modifications in the direct
-connectance and the quantitative connectance evidenced a shift on the
-dominant's energy path. In this sense, the inclusion of the fishery node
-and the availability of discard should be responsible for the
-re-configuration of energy fluxes, which has been already predicted
-[@Strong2010].
+The level of omnivory was already high in the non-fishing system compared to other marine systems [@Link2002a; @Marina2018a] and increased in the fished system. This is a consequence both of fishery consuming resources from different trophic levels [@Bieg2018] and of the discard consumption [@Shephard2014). There is a current debate on whether omnivory favours or not stability, the latest studies indicate that strong omnivory levels could destabilize trophic networks, whereas weak to moderate strength levels of omnivory can confer stability to food webs [@Kratina2012]. The effect of modularity is to buffer the effect of perturbations, with a stronger effect when the system is more complex and is subject to perturbations [@Gilarranz2017]. In this study, the fishing food web presented higher levels of omnivory accompanied with lower levels of modularity, both things points out towards a lower level of stability that is supported by the Quasi sign-stability difference between networks.
 
-Overall, all the estimated metrics reflected differences between the
-fished and the non-fishing models, and those differences have
-implications on the functionality of the system. It is important to
-consider that network analysis implies a simplification of the ecosystem
-in which only trophic and fishery evidence is taken into account.
-However, it proves to be a valid and useful approach to study the effect
-of fisheries on marine ecosystems. Several changes of the species have
-been reported from the beginning of fishery exploitation, 40 years ago.
-For example, a decrease in the size of landed hake of the southern stock
-between 1990 and 2013 [@Santos2013]. Or a decrease in the
-abundance of *A. patachonicus, Genypterus blacodes*, *Zearaja chilensis,
-Psamobatis spp. y Symterygia bonapartii* in the catch of scientific
-surveys between 2005 and 2014 [@Belleggia2017]. It is likely that
-our results are underestimating the effects of fishery exploitation on
-the ecosystem because only the topology of the food web and diets are
-addressed, and the actual changes in the food web of SJG would be
-greater (mainly taking into account also species biomasses). However,
-our results were capable of showing how human activity can alter the
-structure, the stability, and energy fluxes of an ecosystem. This study
-took place in a relatively recently exploited area, compared to the
-Mediterranean, the North Atlantic or several fisheries of the Pacific,
-and therefore it maintains many "original\'\' interactions worth to be
-described, understood and acknowledged before the system undergoes
-further changes.
+<!--@Navia2012 described two major mechanisms by which fisheries can threaten the stability of a network: by transforming a regular species into a key species, followed by an anthropic pressure over the "new" key species, or by removing a complete functional level as a consequence of a trophic cascade effect [@Pinnegar2002].--> 
+
+The hake is the most abundant species in the food web and is a highly connected, the change observed on hake's degree (from N° 12 to N° 1 on the fishing food web) suggests that it could have a major impact on the system. This change can potentially spread perturbations through the food web by transmitting abundance alterations to a great number of nodes [@Perez-Matus2017]. Specifically in an ecosystem as the SJG with low
+functional diversity where each ecological role is covered by one or a few species, and the loss of a species compromises its ecological function [@Rincon-Diaz2021]. However, hake increased its degree in the fishing food web not by direct predation but by its consumption once discarded. As discarding is an undesirable practice that is expected to tend to be reduced over time, the effects of the fishery on the structure of the food web can be reduced by improving fishing practices.
+
+The inclusion of the fishery node and the availability of discard should be responsible for the
+re-configuration of energy fluxes. Many changes have been reported from the beginning of fishery exploitation, 40 years ago, For example, a decrease in the size of landed hake of the southern stock between 1990 and 2013 [@Santos2013], a decrease in the abundance of *Acanthistius patachonicus*, *Genypterus blacodes*, *Zearaja chilensis*, *Psamobatis spp.* and  *Sympterygia spp* in the catch of scientific surveys between 2005 and 2014 [@Belleggia2017], and the increase in abundance of *Munida gregaria*. All these changes are likely a strong influence on energy fluxes.
+
+It is likely that our results are underestimating the effects of fishery exploitation on the ecosystem because only the topology and species diets of the food web are addressed, and the actual changes in the food web of SJG would be greater (mainly taking into account also species biomasses). However, our results were capable of showing how human activity can alter the structure, the stability, and energy fluxes of an ecosystem. This study took place in a relatively recently exploited area, compared to the Mediterranean, the North Atlantic or several fisheries of the Pacific, and therefore it maintains many "original" interactions worth to be described, understood and acknowledged before the system undergoes further changes.
+
 
 ## Declarations of Competing Interest
 
