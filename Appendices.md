@@ -408,9 +408,9 @@ for the two food webs.
 Table: Species numbers reference for the food web figure S1 and S2
 
 
-![Fishing food web. The network is ordered and colored by trophic level in the y axis, the x axis represent different modules calculated with diet weights. Arrows represent trophic interaction between nodes, and the direction indicates energy and biomass fluxes.](Figures/fishing_wmodular_network.eps)
+![Fishing food web. The network is ordered and colored by trophic level in the y axis, the x axis represent different modules calculated with diet weights. Arrows represent trophic interaction between nodes, and the direction indicates energy and biomass fluxes. Check Table S2 for species references](Figures/fishing_wmodular_network.eps)
 
-![Non fishing food web. The network is ordered and colored by trophic level in the y axis, the x axis represent different modules calculated with diet weights. Arrows represent trophic interaction between nodes, and the direction indicates energy and biomass fluxes.](Figures/non-fishing_wmodular_network.eps)
+![Non fishing food web. The network is ordered and colored by trophic level in the y axis, the x axis represent different modules calculated with diet weights. Arrows represent trophic interaction between nodes, and the direction indicates energy and biomass fluxes. Check Table S2 for species references](Figures/non-fishing_wmodular_network.eps)
 
 
 

@@ -1,5 +1,5 @@
-# Bottom trawl fishery in Patagonia does not alter the structure but can change the stability of the food web
-
+# Network analysis can detect changes in food web stability produced by bottom trawl fishery in Patagonia
+ 
 Funes Manuela^1^, Saravia Leonardo A.^2,4^\*, Cordone Georgina^3^, Iribarne Oscar O.^1^ & Galván
 David E.^3^
 
@@ -103,7 +103,7 @@ Table: Degree values (i.e. number of total interaction of each node) for the top
 
 ## Results
 
-The 139 studies used to build both SJG food webs are available in supplementary table S3.
+<!--The 139 studies used to build both SJG food webs are available in supplementary table S3.-->
 The non-fishing food web contained 165 trophic nodes, from which 115 were species and 50 were trophospecies. Nodes were connected by 1013 trophic links (Supplementary figure S2). The percentage of top predators was 16%, intermediate species 78% and basal species 6%. The network presented almost five trophic levels, considering the top predator *Orcinus Orca* with the maximum trophic level of 4.9, closely followed by *Notorynchus cepedianus* and *Mirounga leonina* (Supplementary figure S2, and supplementary table S1). The top three more connected nodes were the Argentine red shrimp, the squat lobster *Munida gregaria,* the Argentine squid and, with the same degree, Amphipoda grouped as trophospecies (Supplementary figure S2 and Table 1). These nodes were all crustaceans, located in the middle of the trophic network in terms of trophic level (3, 2.5, 3.6 and 2 respectively). The mean trophic level of the system was 2.9.
 
 ![Comparison of the metrics for food-webs under fishing and non-fishing scenarios. The coloured points are randomizations of each food web keeping the number of links of each trophospecies constant, the weighted versions take into account the diets of the predators as link weight. The blank dots are the values of the empiric food webs, and the black lines the median of the randomized webs. Extreme values were eliminated from the plots for better visualization.](Figures/weighed_curveBall_metrics.png)
