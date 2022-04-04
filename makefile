@@ -1,4 +1,4 @@
-OPTS= -H margins.sty --bibliography Red_GSJ.bib --citeproc --csl=ecology-letters.csl --pdf-engine=xelatex 
+OPTS= -H margins.sty --bibliography Red_GSJ.bib --citeproc --csl=scientific-reports.csl --pdf-engine=xelatex 
 
 all: Appendices.pdf Red_GSJ.pdf Red_GSJ.docx
 
