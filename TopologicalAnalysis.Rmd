@@ -88,6 +88,7 @@ BS[BS!=1]
 #
 difg <- g1 %m% g 
 E(difg)
+dfE <- as_long_data_frame(difg)
 
 # Differences between vertex 
 setdiff(V(g1)$name,V(g)$name)
@@ -188,20 +189,16 @@ plot_troph_level(g_m,modules =TRUE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite
 ## Calc metrics interval confidence using curveBall  
 
 
-```{r calcMetricsNoFishing, eval=TRUE,echo=F,message=T,warning=T}
+```{r calcMetricsNoFishing14, eval=TRUE,echo=F,message=T,warning=T}
 
 websTbl <- calcTopologicalIndices(g)
-# websTbl <- bind_cols(websTbl, calcIncoherence(g)) 
 websTbl <- bind_cols(websTbl, calc_QSS(g,10000,48, negative = -1, positive = 1)) %>% mutate(Network="noFishing")
 
 lred <- curve_ball(g,1000)
 curveBallNets <- calcTopologicalIndices(lred,ncores=48) %>% mutate(Network="noFishing")
 
-#curveBallNets <- bind_cols(curveBallNets, calcIncoherence(lred,ncores = 48)) %>% mutate(Network="noFishing")
-
 tp0 <- calcModularitySWnessZScore(g,lred,ncores=48)
 tp <- mutate(tp0$da, Network="noFishing")
-#websTbl <- websTbl %>% select(Size:QSS)
 wt1 <- inner_join(websTbl,tp)
 cb1 <- tp0$sims %>% select(modularity)
 curveBallNets <- bind_cols(curveBallNets, cb1)
@@ -366,7 +363,7 @@ gg
 # of one plot (via rel_widths).
 # p <- plot_grid( gg, get_legend(g2+theme(legend.position="bottom")), ncol=1,rel_heights = c(1, .2))
 # p
-save_plot("Figures/curveBall_metrics.png",gg,base_width=8,base_height=5,dpi=600)
+# save_plot("Figures/curveBall_metrics.png",gg,base_width=8,base_height=5,dpi=600)
 
 
 #
@@ -386,9 +383,9 @@ df1 <- curveBallNets %>% dplyr::select(Network,TLmean,LOmnivory,modularity) %>% 
 
 df2 <- curveBallNets %>% group_by(Network) %>% dplyr::select(TLmean,LOmnivory,modularity) %>% summarize_if(is.numeric, median) %>%  gather("metric","median" ,-Network) %>%  spread(Network,median)
 
-df <- inner_join(df,df1)  %>% inner_join(df2) %>% mutate(effectSize=medianDif/sdM) %>% arrange(effectSize) 
+dfu <- inner_join(df,df1)  %>% inner_join(df2) %>% mutate(effectSize=medianDif/sdM) %>% arrange(effectSize) %>%  mutate(type="Unweighted")
 
-knitr::kable(df)
+knitr::kable(dfu,digits = 4)
 
 
 #
@@ -421,11 +418,54 @@ ggsave("Figures/QSS.png",width=6,height=5,units="in",dpi=600)
 
 ```
 
+## Old 
 |metric     |  medianDif|       sdM|   Fishing| noFishing| effectSize|
 |:----------|----------:|---------:|---------:|---------:|----------:|
 |TLmean     | -0.0869179| 0.1146408| 3.0350812| 2.9481633| -0.7581761|
 |LOmnivory  | -0.0597176| 0.2268089| 0.2381428| 0.1784251| -0.2632949|
 |modularity |  0.0138238| 0.0072483| 0.2726800| 0.2865037|  1.9071770|
+
+## New
+
+|     AD|   T.AD|  asympt. P-value|
+|------:|------:|----------------:|
+| 594.28| 779.94|                0| TLmean
+| 326.49| 427.91|                0| LOmnivory
+| 614.56| 806.62|                0| modularity
+
+
+|metric     | medianDif|    sdM| Fishing| noFishing| effectSize|type       |
+|:----------|---------:|------:|-------:|---------:|----------:|:----------|
+|LOmnivory  |   -0.0094| 0.1017|  0.1862|    0.1768|    -0.0921|Unweighted |
+|TLmean     |    0.0488| 0.0879|  2.9118|    2.9606|     0.5546|Unweighted |
+|modularity |    0.0063| 0.0041|  0.2807|    0.2870|     1.5494|Unweighted |
+
+## QSS 
+
+	2-sample test for equality of proportions with continuity correction
+
+data:  websTbl$QSS * 10000 out of c(10000, 10000)
+X-squared = 91.804, df = 1, p-value < 2.2e-16
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ 0.0214101 0.0325899
+sample estimates:
+prop 1 prop 2 
+0.0546 0.0276 
+
+
+## Weigthed QSS
+
+	2-sample test for equality of proportions with continuity correction
+
+data:  websTbl$dietQSS * 10000 out of c(10000, 10000)
+X-squared = 34.769, df = 1, p-value = 3.712e-09
+alternative hypothesis: two.sided
+95 percent confidence interval:
+ 0.01549529 0.03110471
+sample estimates:
+prop 1 prop 2 
+0.0962 0.0729 
 
 
 ## Plot weighted metrics interval confidence using curveBall 
@@ -494,9 +534,13 @@ df1 <- weighted_CurveBallNets %>% dplyr::select(Network,wTLmean,wLOmnivory,Modul
 
 df2 <- weighted_CurveBallNets %>% group_by(Network) %>% dplyr::select(wTLmean,wLOmnivory,Modularity) %>% summarize_if(is.numeric, median) %>%  gather("metric","median" ,-Network) %>%  spread(Network,median)
 
-df <- inner_join(df,df1)  %>% inner_join(df2) %>% mutate(effectSize=medianDif/sdM) %>% arrange(effectSize) 
+dfw <- inner_join(df,df1)  %>% inner_join(df2) %>% mutate(effectSize=medianDif/sdM) %>% arrange(effectSize) %>% mutate(type="Weighted")
 
-knitr::kable(df)
+#
+# Add unweighted and weighted
+#
+dfw <- bind_rows(dfu,dfw) %>% select( type, everything())
+knitr::kable(dfw,digits = 4)
 
 
 
@@ -519,6 +563,21 @@ knitr::kable(df)
 |wLOmnivory | -0.0595303| 1.1041427|  0.2234628|  0.1639325| -0.0539154|
 |Modularity |  0.8695713| 1.1809291| -5.3771676| -4.5075963|  0.7363451|
 
+## NEW
+
+
+|      AD|   T.AD|  asympt. P-value|
+|-------:|------:|----------------:|
+| 323.820| 424.40|                0| wTLmean
+|  78.797| 102.27|                0| wLOmnivory
+|  87.164| 113.27|                0| Modularity
+
+|metric     |  medianDif|       sdM|    Fishing|  noFishing| effectSize|
+|:----------|----------:|---------:|----------:|----------:|----------:|
+|wLOmnivory | -0.0130452| 0.1239900|  0.1756424|  0.1625972| -0.1052114|
+|Modularity |  0.4885215| 0.9860427| -4.9992604| -4.5107388|  0.4954365|
+|wTLmean    |  0.0517255| 0.1012028|  2.9020820|  2.9538074|  0.5111070|
+
 
 # Keystoneness centrality
 
@@ -533,6 +592,8 @@ k_fish <- tibble(species=names(k_fish),degree=k_fish) %>% arrange(desc(degree))
 kk <- left_join(k_fish,k_no_fish, by="species")
 names(kk) <- c("Species","Fished","Unfished")
 knitr::kable(kk)
+pander::pandoc.table(kk[1:23,],digits = 4,style="rmarkdown",emphasize.italics.cols=1 )
+  
 
 # Weighted degree (not too much sense with diets)
 #
@@ -555,7 +616,8 @@ kk1 <- left_join(tl_fish,tl_no_fish, by="species")
 names(kk1) <- c("Species","Fished","Unfished")
 
 knitr::kable(kk1,digits = 4)
-
+pander::pandoc.table(kk1,digits = 4,style="rmarkdown",emphasize.italics.cols=1 )
+  
 ```
 
 

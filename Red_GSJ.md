@@ -31,7 +31,7 @@ The first aim of this study was to describe for the first time the food web of t
 
 ## Introduction
 
-Fisheries are an important human activity and they can be found in almost every coastal system worldwide [@Pauly1995]. They are an essential source of animal protein for human consumption [@FAO2018] and employ a quarter of a billion people [@Teh2013]. On the other hand, demersal fisheries are one of the top anthropic stressors in marine environments [@Halpern2007], capable of modifying the habitat and its biological community [@Kaiser2002]. The selectivity of the fishing gear, together with organism traits such as body size, lifespan and habits determine how vulnerable species are to fishing activity. Fisheries, in the long-term, can alter the abundance and diversity of species [@Hiddink2020] which could change trophic relationships and the trophic level of predators [@Funes2019; @Preciado2019; @Su2021], modifying the structure of the ecosystem.
+Fisheries are an important human activity and they can be found in almost every coastal system worldwide [@Pauly1995]. They are an essential source of animal protein for human consumption [@FAO2018] and employ a quarter of a billion people [@Teh2013]. On the other hand, demersal fisheries are one of the top anthropic stressors in marine environments [@Halpern2007], capable of modifying the habitat and its associated biological community [@Kaiser2002]. The selectivity of the fishing gear, together with organism traits such as body size, lifespan and habits determine how vulnerable species are to fishing activity. Fisheries, in the long-term, can alter the abundance and diversity of species [@Hiddink2020] which could change trophic relationships and the trophic level of predators [@Funes2019; @Preciado2019; @Su2021], modifying the structure of the ecosystem.
 
 Fisheries can change the relative energy demands of a community [@Jennings2008] and alterations in the fluxes configuration can lead to changes in the stability of the food web [@Ruiter1995]. Food webs characterize the trophic interactions (i.e. consumer-resource relationships) among species in an ecosystem [@Bascompte2009]. The first step in food web analysis is to reconstruct the links between species, which describe network topology. The topology or the network structure has two components: nodes (standing for the species or groups of species), and links connecting nodes that represent the ecological interactions between the species. To describe and compare food webs, a useful approach is through network metrics related to stability and resilience of the system, like the level of omnivory [@Wootton2017], the mean trophic level [@Borrelli2014], modularity [@Stouffer2011] and other metrics [@Marquez-Velasquez2021]. However, an accumulating body of evidence suggests that the relationship between structural properties and stability can only be understood if the strength of interactions are considered [@Neutel2014; @Neutel2016; @Saravia2021].
 
@@ -46,7 +46,7 @@ Information on the functionality of SJG is scarce and its understanding has econ
 
 ### Data
 
-The food web of SJG was built by a systematic search of all available studies on species and diets of marine animals of the area. The nodes of the network are the species, but in cases where there was not enough taxonomic information available, these were grouped as trophospecies.
+We made a systematic search of all available studies on species and diets of marine animals of the area to build the SJG food web. The nodes of the network are the species, but in cases where there was not enough taxonomic information available, these were grouped as trophospecies.
 
 We included stomach content analysis and direct observations studies. When the diet was not reported for SJG, studies conducted at neighbour areas were used. In these cases, we included only prey items reported for SJG. Meiofauna (organisms < 1 mm) and parasites were not included. After consulting more than 300 papers, 139 of them had useful information to build the SJG food web, and the resulting list of species and interactions were revised by experts who work on SJG (Supplementary table S1).
 
@@ -71,42 +71,48 @@ Finally, we calculated the Quasi sign-stability (QSS) index, which is the propor
 
 ### Analysis
 
-Food web metrics were estimated for both food webs (with and without fishing activity) in order to assess their differences. Considering the equilibrium as the capacity of a system to return to initial conditions after a disturbance, it is expected that all network metrics respond to a more equilibrate state in the non-fishing model than in the fishing model. For the comparison we performed 1000 randomizations (except for QSS, see above) using the curveball algorithm which maintains constant the number of prey and predators for each species, therefore keeping fixed the number of columns and rows in the adjacency matrix [@Strona2014]. In the case of the weighted metrics additionally the values of weights (diets) were randomized maintaining the column sum fixed on the weighted adjacency matrix (See formulas on the supplementary material). The distribution of the metrics were
+Food web metrics were estimated for both food webs (with and without fishing activity) in order to assess their differences. Considering the equilibrium as the capacity of a system to return to initial conditions after a disturbance, it is expected that all network metrics respond to a more equilibrate state in the non-fishing model than in the fishing model. For the comparison we performed 1000 randomizations (except for QSS, see above) using the curveball algorithm which maintains constant the number of prey and predators for each species, therefore keeping fixed the number of columns and rows in the adjacency matrix [@Strona2014]. In the case of the weighted metrics additionally, the values of weights (diets) were randomized maintaining the column sum fixed on the weighted adjacency matrix (See formulas on the supplementary material). The distribution of the metrics were
 compared between the fished and non-fishing model using Anderson-Darling test [@Scholz1987], and the effect size; obtained by dividing the median of the data by the pooled standard deviation. The effect size interpretation is arbitrary [@Lakens2013] so we use it as a relative measure of the magnitude of differences between food webs' metrics. Quasi sign-stability values were compared using a Chi-squared test.
 
 All estimations were performed in R software, using the packages igraph, NetIndices, and Multiweb package [@Saravia2019]. The source code and data is available at <https://github.com/EcoComplex/NetworkGolfoSanJorge> and Zenodo.
 
-  Species or trophospecies         Fishing   non-fishing
-  -------------------------------- --------- -------------
-  *Merluccius hubbsi*              59        34
-  *Pleoticus muelleri*             58        56
-  *Munida gregaria*                57        55
-  *Illex argentinus*               48        47
-  *Amphipoda*                      47        47
-  *FISHERY*                        47        \-
-  *Polychaeta*                     45        45
-  *isopods*                        38        38
-  *Zearaja chilensis*              38        37
-  *Engraulis anchoita*             37        36
-  *Octopus tehuelchus*             37        36
-  *Pseudopercis semifasciata*      35        34
-  *detritus*                       34        34
-  *Mustelus schmitti*              32        31
-  *Enteroctopus megalocyathus*     30        30
-  *Bathyraja spp*                  29        27
-  *Patagonotothen spp*             28        26
-  *Paralichthys spp*               28        26
-  *Pterygosquilla armata armata*   27        26
-  *Raneya spp*                     27        26
+\newpage
 
-Table: Degree values (i.e. number of total interaction of each node) for the top 20 species and trophoespecies of the system from the non-fishing scenario and from the fishing food webs.
+
+| Species or trophospecies        | Fishing  | non-fishing |
+| :------------------------------ | :------: | :--------:  |
+| *Pleoticus muelleri*            | 58       | 56          |
+| *Munida gregaria*               | 57       | 55          |
+| *Illex argentinus*              | 48       | 47          |
+| *Amphipoda*                     | 48       | 48          |
+| FISHERY                         | 47       | \-          |
+| *Polychaeta*                    | 45       | 45          |
+| *isopods*                       | 38       | 38          |
+| *Engraulis anchoita*            | 37       | 36          |
+| *Octopus tehuelchus*            | 37       | 36          |
+| *Zearaja chilensis*             | 37       | 36          |
+| *detritus*                      | 35       | 35          |
+| *Pseudopercis semifasciata*     | 35       | 34          |
+| *Merluccius hubbsi*             | 34       | 34          |
+| *Mustelus schmitti*             | 32       | 31          |
+| *Enteroctopus megalocyathus*    | 30       | 30          |
+| *Bathyraja spp*                 | 29       | 27          |
+| *Patagonotothen spp*            | 28       | 26          |
+| *Paralichthys spp*              | 28       | 26          |
+| *Pterygosquilla armata armata*  | 27       | 26          |
+| *Raneya spp*                    | 27       | 26          |
+| *Phalacrocorax atriceps*        | 24       | 24          |
+| *Atlantoraja castelnaui*        | 23       | 23          |
+| DISCARD                         | 23       | \-          |
+
+Table: Degree values (i.e. number of total interactions of each node) for the top 23 species and trophoespecies of the system from the non-fishing scenario and from the fishing food webs.
 
 ## Results
 
 <!--The 139 studies used to build both SJG food webs are available in supplementary table S3.-->
 The non-fishing food web contained 165 trophic nodes, from which 115 were species and 50 were trophospecies. Nodes were connected by 1013 trophic links (Supplementary figure S2). The percentage of top predators was 16%, intermediate species 78% and basal species 6%. The network presented almost five trophic levels, considering the top predator *Orcinus Orca* with the maximum trophic level of 4.9, closely followed by *Notorynchus cepedianus* and *Mirounga leonina* (Supplementary figure S2, and supplementary table S1). The top three more connected nodes were the Argentine red shrimp, the squat lobster *Munida gregaria,* the Argentine squid and, with the same degree, Amphipoda grouped as trophospecies (Supplementary figure S2 and Table 1). These nodes were all crustaceans, located in the middle of the trophic network in terms of trophic level (3, 2.5, 3.6 and 2 respectively). The mean trophic level of the system was 2.9.
 
-![Comparison of the metrics for food-webs under fishing and non-fishing scenarios. The coloured points are randomizations of each food web keeping the number of links of each trophospecies constant, the weighted versions take into account the diets of the predators as link weight. The blank dots are the values of the empiric food webs, and the black lines the median of the randomized webs. Extreme values were eliminated from the plots for better visualization.](Figures/weighed_curveBall_metrics.png)
+![Comparison of the metrics for food-webs under fishing and non-fishing scenarios. The coloured points are randomizations of each food web keeping the number of links of each trophospecies constant, the weighted versions take into account the diets of the predators as link weight. The blank dots are the values of the empiric food webs, and the black lines the median of the randomized webs. Extreme values were eliminated from the plots for better visualization. These values were points below [Q1-(1.5)IQR] or above [Q3+(1.5)IQR], where Q1, Q3 are the first and third quantiles, and IQR is the interquartile range. ](Figures/weighed_curveBall_metrics.png)
 
 
 The fishing food web contained one extra trophic node and 71 extra trophic links, resulting in 166 nodes (115 species and 51 trophospecies), connected by 1084 links (Supplementary figure S1). The extra node was the fishery and the new links represented all new interactions enabled by fishing activity: the capture of species and the consumption of discards. The percentage of top predators was practically equal to the non-fishing food web (16%, intermediate species 78% and basal species 6%). The top predator was also *O. Orca* but its trophic level was a little higher: 5
@@ -116,18 +122,19 @@ respectively. The mean trophic level of the fished network was 3.0.
 
 \newpage
 
-  Type         metric       Fishing Median   non-fishing Median   Median difference   Pooled sd   Effect Size
-  ------------ ------------ ---------------- -------------------- ------------------- ----------- -------------
-  Unweighted   TL           3.0351           2.9482               -0.0869             0.1146      -0.7582
-               Omnivory     0.2381           0.1784               -0.0597             0.2268      -0.2633
-               Modularity   0.2727           0.2865               0.0138              0.0072      1.9072
-  Weighted     TL           3.0445           2.9534               -0.0911             0.2491      -0.3659
-               Omnivory     0.2235           0.1639               -0.0595             1.1041      -0.0539
-               Modularity   -5.3772          -4.5076              0.8696              1.1809      0.7363
+
+| type        | metric      | non-Fishing Median | Fishing Median | Median difference | Pooled sd | Effect Size |
+| :---------- | :---------- | ---------:         | -------:       | ---------:        | ------:   | ----------: |
+| Unweighted  | Omnivory    | 0.1768             | 0.1862         | -0.0094           | 0.1017    | -0.0921     |
+|             | TL          | 2.9606             | 2.9118         | 0.0488            | 0.0879    | 0.5546      |
+|             | Modularity  | 0.2870             | 0.2807         | 0.0063            | 0.0041    | 1.5494      |
+| Weighted    | Omnivory    | 0.1642             | 0.1754         | -0.0113           | 0.7476    | -0.0151     |
+|             | TL          | 2.9657             | 2.9172         | 0.0485            | 0.1942    | 0.2498      |
+|             | Modularity  | -4.4740            | -5.0443        | 0.5703            | 1.0199    | 0.5591      |
 
 Table: Omnivory level, mean trophic level (TL) and modularity
 values of the fishing and non-fishing model. For each metric, the median
-difference (median Diff), pooled standard deviation and the magnitude of
+difference, pooled standard deviation and the magnitude of
 the effect size, estimated as the median difference over the pooled sd.
 
 There are significant differences between the fishing and the non-fishing food webs topological metrics (mean trophic level, modularity and omnivory

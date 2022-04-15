@@ -1,14 +1,14 @@
 Presa	Predador	weight
-Polychaeta	Acanthistius patachonicus	0.14
+Aequipecten tehuelchus	Pseudopercis semifasciata	0.05
+Aphrodite	Pseudopercis semifasciata	0.05
+Arbacia dufresnii	Pseudopercis semifasciata	0.01
 Merluccius hubbsi	Acanthistius patachonicus	0.15
-Illex argentinus	Acanthistius patachonicus	0.02
-Majidae	Acanthistius patachonicus	0.16
-Echiurids	Acanthistius patachonicus	0.01
-Munida gregaria	Acanthistius patachonicus	0.21
-Patagonotothen spp	Acanthistius patachonicus	0.01
-Pleoticus muelleri	Acanthistius patachonicus	0.16
-Pterygosquilla armata armata	Acanthistius patachonicus	0.13
+Merluccius hubbsi	Pseudopercis semifasciata	0.1
 echinoids	Acanthistius patachonicus	0.01
+Echiurids	Acanthistius patachonicus	0.01
+Engraulis anchoita	Pseudopercis semifasciata	0.08
+Enteroctopus megalocyathus	Pseudopercis semifasciata	0.05
+Eunicidae	Pseudopercis semifasciata	0.01
 detritus	Aequipecten tehuelchus	0.5
 phytoplankton	Aequipecten tehuelchus	0.5
 zooplankton	Agonopsis chiloensis	1
@@ -104,7 +104,7 @@ Libidoclaea granaria	Bathyraja spp	0.01
 Libinia spinosa	Bathyraja spp	0.01
 Macruronus magellanicus	Bathyraja spp	0.01
 Majidae	Bathyraja spp	0.01
-Merluccius hubbsi	Bathyraja spp	0.2
+DISCARD	Bathyraja spp	0.2
 Munida gregaria	Bathyraja spp	0.02
 Mytilus edulis	Bathyraja spp	0.01
 Myxine spp	Bathyraja spp	0.01
@@ -130,24 +130,23 @@ Gasteropods	Bovichthys argentinus	0.1
 Polychaeta	Bovichthys argentinus	0.1
 POM	Bryozoa	1
 detritus	Buccinanops globulosus	0.5
-Merluccius hubbsi	Buccinanops globulosus	0.2
+DISCARD	Buccinanops globulosus	0.2
 Polychaeta	Buccinanops globulosus	0.3
 Bivalve	Callorhinchus callorynchus	0.23
 Asteroidea	Callorhinchus callorynchus	0.19
 Illex argentinus	Callorhinchus callorynchus	0.1
 Majidae	Callorhinchus callorynchus	0.02
-Merluccius hubbsi	Callorhinchus callorynchus	0.18
+DISCARD	Callorhinchus callorynchus	0.18
 Munida gregaria	Callorhinchus callorynchus	0.06
 echinoids	Callorhinchus callorynchus	0.05
 Pleoticus muelleri	Callorhinchus callorynchus	0.02
 Polychaeta	Callorhinchus callorynchus	0.05
 Pterygosquilla armata armata	Callorhinchus callorynchus	0.1
-Amphipoda	Carcinus maenas	0.1
-Bivalve	Carcinus maenas	0.4
+Amphipoda	Carcinus maenas	0.15
+Bivalve	Carcinus maenas	0.45
 Carcinus maenas	Carcinus maenas	0.07
 Macroalgae 	Carcinus maenas	0.05
 Mysidacea	Carcinus maenas	0.01
-Merluccius hubbsi	Carcinus maenas	0.1
 Patagonotothen spp	Carcinus maenas	0.05
 Polychaeta	Carcinus maenas	0.22
 Doryteuthis gahi	Cephalorhynchus commersonii	0.15
@@ -203,7 +202,7 @@ Illex argentinus	Dipturus chilensis	0.18
 isopods	Dipturus chilensis	0.02
 Libinia spinosa	Dipturus chilensis	0.01
 Macruronus magellanicus	Dipturus chilensis	0.05
-Merluccius hubbsi	Dipturus chilensis	0.36
+DISCARD	Dipturus chilensis	0.36
 Munida gregaria	Dipturus chilensis	0.01
 Paralichthys spp	Dipturus chilensis	0.01
 Patagonotothen spp	Dipturus chilensis	0.2
@@ -278,7 +277,7 @@ Leucippa pentagona	Enteroctopus megalocyathus	0.03
 Euphausiacea	Eubalaena australis	0.50
 Munida gregaria	Eubalaena australis	0.50
 detritus	Eunicidae	0.50
-Merluccius hubbsi	Eunicidae	0.50
+DISCARD	Eunicidae	0.50
 zooplankton	Euphausiacea	0.30
 phytoplankton	Euphausiacea	0.70
 detritus	Eurypodius latreillii	1
@@ -318,7 +317,7 @@ Munida gregaria	Genypterus brasiliensis 	0.1
 Pleoticus muelleri	Genypterus brasiliensis 	0.03
 Pterygosquilla armata armata	Genypterus brasiliensis 	0.36
 Genypterus blacodes	Genypterus brasiliensis 	0.18
-Merluccius hubbsi	Genypterus brasiliensis 	0.13
+DISCARD	Genypterus brasiliensis 	0.13
 Raneya spp	Genypterus brasiliensis 	0.2
 Doryteuthis gahi	Globicephala melas edwardii	0.01
 Amphipoda	Globicephala melas edwardii	0.01
@@ -385,7 +384,7 @@ Cyrtograpsus spp	Larus atlanticus	0.95
 Glyceridae	Larus atlanticus	0.01
 Leucippa pentagona	Larus atlanticus	0.01
 Perumytilus purpuratus	Larus atlanticus	0.01
-Merluccius hubbsi	Larus dominicanus	0.1
+DISCARD	Larus dominicanus	0.1
 Engraulis anchoita	Larus dominicanus	0.1
 Patagonotothen spp	Larus dominicanus	0.02
 Acanthistius patachonicus	Larus dominicanus	0.01
@@ -419,13 +418,13 @@ ophiuroids	Lithodes santolla	0.01
 Peltarion spinosulum	Lithodes santolla	0.05
 Pseudoechinus magellanicus	Lithodes santolla	0.15
 Pterygosquilla armata armata	Lithodes santolla	0.05
-Merluccius hubbsi	Lithodes santolla	0.25
+DISCARD	Lithodes santolla	0.25
 Doryteuthis gahi	Macronectes giganteus	0.06
 Decapoda	Macronectes giganteus	0.03
 Illex argentinus	Macronectes giganteus	0.27
 isopods	Macronectes giganteus	0.05
 Macruronus magellanicus	Macronectes giganteus	0.02
-Merluccius hubbsi	Macronectes giganteus	0.25
+DISCARD	Macronectes giganteus	0.25
 Munida gregaria	Macronectes giganteus	0.08
 Octopus tehuelchus	Macronectes giganteus	0.03
 Peisos petrunkevitchi	Macronectes giganteus	0.06
@@ -451,7 +450,7 @@ Pterygosquilla armata armata	Merluccius hubbsi	0.01
 Raneya spp	Merluccius hubbsi	0.01
 Themisto gaudichaudii	Merluccius hubbsi	0.1
 Illex argentinus	Mirounga leonina	0.6
-Merluccius hubbsi	Mirounga leonina	0.3
+DISCARD	Mirounga leonina	0.3
 Patagonotothen spp	Mirounga leonina	0.1
 zooplankton	Mnemiopsis leidyi	1
 Amphipoda	Mullus argentinae	0.16
@@ -476,7 +475,7 @@ Polychaeta	Munida gregaria	0.11
 POM	Munida gregaria	0.2
 Porifera	Munida gregaria	0.01
 Foraminifera	Munida gregaria	0.06
-Merluccius hubbsi	Munida gregaria	0.01
+DISCARD	Munida gregaria	0.01
 Amphipoda	Mustelus schmitti	0.01
 Artemesia longinaris	Mustelus schmitti	0.01
 Dules auriga	Mustelus schmitti	0.01
@@ -520,7 +519,7 @@ detritus	Mytilus edulis	0.3
 Diatomeas	Mytilus edulis	0.3
 POM	Mytilus edulis	0.4
 detritus	Myxine spp	0.5
-Merluccius hubbsi	Myxine spp	0.5
+DISCARD	Myxine spp	0.5
 POM	Nacella magellanica	1
 Amphipoda	Nemadactylus bergi	0.15
 isopods	Nemadactylus bergi	0.05
@@ -625,7 +624,7 @@ Illex argentinus	Paralichthys spp	0.01
 isopods	Paralichthys spp	0.01
 Odontesthes spp	Paralichthys spp	0.08
 Pterygosquilla armata armata	Paralichthys spp	0.01
-Merluccius hubbsi	Paralichthys spp	0.05
+DISCARD	Paralichthys spp	0.05
 Peisos petrunkevitchi	Paralichthys spp	0.01
 Munida gregaria	Paralichthys spp	0.01
 Majidae	Paralichthys spp	0.01
@@ -633,20 +632,19 @@ Cynoscion guatucupa	Paralichthys spp	0.01
 Doryteuthis sanpaulensis	Paralichthys spp	0.06
 Engraulis anchoita	Parona signata	0.1
 Euphausiacea	Parona signata	0.3
-Illex argentinus	Parona signata	0.05
-Merluccius hubbsi	Parona signata	0.1
-Munida gregaria	Parona signata	0.15
-Mnemiopsis leidyi	Parona signata	0.3
+Illex argentinus	Parona signata	0.1
+Munida gregaria	Parona signata	0.17
+Mnemiopsis leidyi	Parona signata	0.33
 Amphipoda	Patagonotothen spp	0.4
 Polychaeta	Patagonotothen spp	0.03
 Doryteuthis gahi	Patagonotothen spp	0.01
-Merluccius hubbsi	Patagonotothen spp	0.01
+DISCARD	Patagonotothen spp	0.01
 Copepoda	Patagonotothen spp	0.1
 Euphausiacea	Patagonotothen spp	0.05
 Themisto gaudichaudii	Patagonotothen spp	0.4
 detritus	Peisos petrunkevitchi	1
 detritus	Peltarion spinosulum	0.5
-Merluccius hubbsi	Peltarion spinosulum	0.5
+DISCARD	Peltarion spinosulum	0.5
 Artemesia longinaris	Percophis brasiliensis	0.01
 Bivalve	Percophis brasiliensis	0.01
 Cynoscion guatucupa	Percophis brasiliensis	0.01
@@ -774,27 +772,27 @@ Pseudoechinus magellanicus	Pinguipes brasilianus	0.05
 Ribeiroclinus eigenmanni	Pinguipes brasilianus	0.05
 Triathalassothia argentina	Pinguipes brasilianus	0.05
 Aphrodite	Pinguipes brasilianus	0.1
-Merluccius hubbsi	Pleoticus muelleri	0.08
-isopods	Pleoticus muelleri	0.03
-Euphausiacea	Pleoticus muelleri	0.02
-Pleoticus muelleri	Pleoticus muelleri	0.06
-Peisos petrunkevitchi	Pleoticus muelleri	0.05
-Copepoda	Pleoticus muelleri	0.01
-Bivalve	Pleoticus muelleri	0.05
-Gasteropods	Pleoticus muelleri	0.08
-Semirossia tenera	Pleoticus muelleri	0.08
-ophiuroids	Pleoticus muelleri	0.02
-Pseudoechinus magellanicus	Pleoticus muelleri	0.06
-Asteroidea	Pleoticus muelleri	0.02
-Holothurians	Pleoticus muelleri	0.07
-Nematoda	Pleoticus muelleri	0.01
-Foraminifera	Pleoticus muelleri	0.01
-Hydrozoa	Pleoticus muelleri	0.06
-Bryozoa	Pleoticus muelleri	0.06
-detritus	Pleoticus muelleri	0.03
-zooplankton	Pleoticus muelleri	0.01
 Amphipoda	Pleoticus muelleri	0.04
 Aphrodite	Pleoticus muelleri	0.15
+Asteroidea	Pleoticus muelleri	0.02
+Bivalve	Pleoticus muelleri	0.05
+Bryozoa	Pleoticus muelleri	0.06
+Copepoda	Pleoticus muelleri	0.01
+detritus	Pleoticus muelleri	0.03
+DISCARD	Pleoticus muelleri	0.08
+Euphausiacea	Pleoticus muelleri	0.02
+Foraminifera	Pleoticus muelleri	0.01
+Gasteropods	Pleoticus muelleri	0.08
+Holothurians	Pleoticus muelleri	0.07
+Hydrozoa	Pleoticus muelleri	0.06
+isopods	Pleoticus muelleri	0.03
+Nematoda	Pleoticus muelleri	0.01
+ophiuroids	Pleoticus muelleri	0.02
+Peisos petrunkevitchi	Pleoticus muelleri	0.05
+Pleoticus muelleri	Pleoticus muelleri	0.06
+Pseudoechinus magellanicus	Pleoticus muelleri	0.06
+Semirossia tenera	Pleoticus muelleri	0.08
+zooplankton	Pleoticus muelleri	0.01
 Amphipoda	Pleurobranchaea maculata	0.01
 Cnidaria	Pleurobranchaea maculata	0.06
 Ascidiacea	Pleurobranchaea maculata	0.15
@@ -816,7 +814,7 @@ Decapoda	Procellaria aequinoctialis	0.08
 Gymnoscopelus nicholsi	Procellaria aequinoctialis	0.3
 Illex argentinus	Procellaria aequinoctialis	0.1
 Patagonotothen spp	Procellaria aequinoctialis	0.05
-Merluccius hubbsi	Procellaria aequinoctialis	0.31
+DISCARD	Procellaria aequinoctialis	0.31
 Euphausiacea	Procellaria aequinoctialis	0.1
 Amphipoda	Psammobatis spp	0.05
 isopods	Psammobatis spp	0.18
@@ -835,45 +833,45 @@ Raneya spp	Psammobatis spp	0.02
 Sprattus fuegensis	Psammobatis spp	0.03
 biofilm	Pseudoechinus magellanicus	0.5
 detritus	Pseudoechinus magellanicus	0.5
-Aequipecten tehuelchus	Pseudopercis semifasciata	0.05
-Arbacia dufresnii	Pseudopercis semifasciata	0.01
-Engraulis anchoita	Pseudopercis semifasciata	0.08
-Enteroctopus megalocyathus	Pseudopercis semifasciata	0.05
-Eunicidae	Pseudopercis semifasciata	0.01
 Fissurella spp	Pseudopercis semifasciata	0.01
 Helcogrammoides cunninghami	Pseudopercis semifasciata	0.01
+Illex argentinus	Acanthistius patachonicus	0.02
 Illex argentinus	Pseudopercis semifasciata	0.05
 Leurocyclus tuberculosus	Pseudopercis semifasciata	0.01
 Macruronus magellanicus	Pseudopercis semifasciata	0.05
+Majidae	Acanthistius patachonicus	0.16
+Munida gregaria	Acanthistius patachonicus	0.21
 Munida gregaria	Pseudopercis semifasciata	0.02
 Mytilus edulis	Pseudopercis semifasciata	0.1
 Nemadactylus bergi	Pseudopercis semifasciata	0.01
 Octopus tehuelchus	Pseudopercis semifasciata	0.01
 Odontesthes spp	Pseudopercis semifasciata	0.05
+Patagonotothen spp	Acanthistius patachonicus	0.01
 Patagonotothen spp	Pseudopercis semifasciata	0.01
 Peisos petrunkevitchi	Pseudopercis semifasciata	0.01
 Peltarion spinosulum	Pseudopercis semifasciata	0.01
 Pinguipes brasilianus	Pseudopercis semifasciata	0.05
+Pleoticus muelleri	Acanthistius patachonicus	0.16
 Pleoticus muelleri	Pseudopercis semifasciata	0.01
+Polychaeta	Acanthistius patachonicus	0.14
 Pseudopercis semifasciata	Pseudopercis semifasciata	0.1
+Pterygosquilla armata armata	Acanthistius patachonicus	0.13
 Raneya spp	Pseudopercis semifasciata	0.01
 Ribeiroclinus eigenmanni	Pseudopercis semifasciata	0.01
 Rochinia gracilipes	Pseudopercis semifasciata	0.05
 Sebastes oculatus	Pseudopercis semifasciata	0.05
 Stromateus brasiliensis	Pseudopercis semifasciata	0.01
 Triathalassothia argentina	Pseudopercis semifasciata	0.01
-Merluccius hubbsi	Pseudopercis semifasciata	0.1
-Aphrodite	Pseudopercis semifasciata	0.05
 Munida gregaria	Pterygosquilla armata armata	0.43
 Pleoticus muelleri	Pterygosquilla armata armata	0.45
-Merluccius hubbsi	Pterygosquilla armata armata	0.12
+DISCARD	Pterygosquilla armata armata	0.12
 Genypterus blacodes	Raja flavirostris	0.01
 Libidoclaea granaria	Raja flavirostris	0.01
 Libinia spinosa	Raja flavirostris	0.01
 Munida gregaria	Raja flavirostris	0.08
 Peltarion spinosulum	Raja flavirostris	0.06
 Pterygosquilla armata armata	Raja flavirostris	0.15
-Merluccius hubbsi	Raja flavirostris	0.64
+DISCARD	Raja flavirostris	0.64
 Majidae	Raja flavirostris	0.01
 Polychaeta	Raja flavirostris	0.01
 Illex argentinus	Raja flavirostris	0.01
@@ -904,7 +902,7 @@ Illex argentinus	Schroederichthys bivius	0.15
 Majidae	Schroederichthys bivius	0.15
 Munida gregaria	Schroederichthys bivius	0.03
 Myxine spp	Schroederichthys bivius	0.06
-Merluccius hubbsi	Schroederichthys bivius	0.21
+DISCARD	Schroederichthys bivius	0.21
 Pleoticus muelleri	Schroederichthys bivius	0.06
 Polychaeta	Schroederichthys bivius	0.06
 Pterygosquilla armata armata	Schroederichthys bivius	0.12
@@ -992,7 +990,7 @@ Munida gregaria	Sympterygia spp	0.1
 Polychaeta	Sympterygia spp	0.05
 Pleoticus muelleri	Sympterygia spp	0.05
 Pterygosquilla armata armata	Sympterygia spp	0.2
-Merluccius hubbsi	Sympterygia spp	0.2
+DISCARD	Sympterygia spp	0.2
 Engraulis anchoita	Sympterygia spp	0.1
 Peltarion spinosulum	Sympterygia spp	0.2
 Amphipoda	Tachyeres leucocephalus	0.01
@@ -1014,7 +1012,7 @@ Cynoscion guatucupa	Thalassarche melanophris	0.03
 Illex argentinus	Thalassarche melanophris	0.1
 Octopus tehuelchus	Thalassarche melanophris	0.1
 Decapoda	Thalassarche melanophris	0.1
-Merluccius hubbsi	Thalassarche melanophris	0.1
+DISCARD	Thalassarche melanophris	0.1
 Engraulis anchoita	Thalassarche melanophris	0.4
 Urophycis brasiliensis            	Thalassarche melanophris	0.15
 Doryteuthis sanpaulensis	Thalassarche melanophris	0.02
@@ -1042,44 +1040,46 @@ Decapoda	Xystreuris rasile	0.2
 Munida gregaria	Xystreuris rasile	0.2
 Pleoticus muelleri	Xystreuris rasile	0.2
 Pterygosquilla armata armata	Xystreuris rasile	0.3
-Doryteuthis gahi	Zearaja chilensis	0.01
 Agonopsis chiloensis	Zearaja chilensis	0.01
 Ascidiacea	Zearaja chilensis	0.01
-Austropandalus grayi	Zearaja chilensis	0.02
-Bassanago albescens	Zearaja chilensis	0.02
-Bathyraja spp	Zearaja chilensis	0.02
 Cheilodactylus bergi	Zearaja chilensis	0.01
-Congiopodus peruvianus	Zearaja chilensis	0.02
 Cottoperca gobio	Zearaja chilensis	0.01
-Discopyge tschudii	Zearaja chilensis	0.03
+Doryteuthis gahi	Zearaja chilensis	0.01
 Eunicidae	Zearaja chilensis	0.01
 Euphausiacea	Zearaja chilensis	0.01
-Genypterus blacodes	Zearaja chilensis	0.05
-Glyceridae	Zearaja chilensis	0.01
 Hydrozoa	Zearaja chilensis	0.01
-Illex argentinus	Zearaja chilensis	0.05
 isopods	Zearaja chilensis	0.01
 Libidoclaea granaria	Zearaja chilensis	0.01
-Macruronus magellanicus	Zearaja chilensis	0.05
-Munida gregaria	Zearaja chilensis	0.06
 Myxine spp	Zearaja chilensis	0.01
 Octopus tehuelchus	Zearaja chilensis	0.01
 Odontocymbiola magellanica	Zearaja chilensis	0.01
 Pagurus comptus	Zearaja chilensis	0.01
-Paralichthys spp	Zearaja chilensis	0.05
-Patagonotothen spp	Zearaja chilensis	0.03
 Peisos petrunkevitchi	Zearaja chilensis	0.01
-Peltarion spinosulum	Zearaja chilensis	0.02
 Pleoticus muelleri	Zearaja chilensis	0.01
-Polychaeta	Zearaja chilensis	0.02
 Pterygosquilla armata armata	Zearaja chilensis	0.01
-Raneya spp	Zearaja chilensis	0.02
-Schroederichthys bivius	Zearaja chilensis	0.08
 Semirossia tenera	Zearaja chilensis	0.01
 Themisto gaudichaudii	Zearaja chilensis	0.01
 Zearaja chilensis	Zearaja chilensis	0.01
-Merluccius hubbsi	Zearaja chilensis	0.25
+Austropandalus grayi	Zearaja chilensis	0.02
+Bassanago albescens	Zearaja chilensis	0.02
+Bathyraja spp	Zearaja chilensis	0.02
+Congiopodus peruvianus	Zearaja chilensis	0.02
+Peltarion spinosulum	Zearaja chilensis	0.02
+Raneya spp	Zearaja chilensis	0.02
+Discopyge tschudii	Zearaja chilensis	0.03
+Glyceridae	Zearaja chilensis	0.03
+Patagonotothen spp	Zearaja chilensis	0.03
+Genypterus blacodes	Zearaja chilensis	0.05
+Illex argentinus	Zearaja chilensis	0.05
+Macruronus magellanicus	Zearaja chilensis	0.05
+Paralichthys spp	Zearaja chilensis	0.05
+Munida gregaria	Zearaja chilensis	0.06
+Schroederichthys bivius	Zearaja chilensis	0.08
+DISCARD	Zearaja chilensis	0.25
 phytoplankton	zooplankton	1
 POM	Austropandalus grayi	0.3
 detritus	Austropandalus grayi	0.3
 zooplankton	Austropandalus grayi	0.4
+Amphipoda	Glyceridae	0.4
+detritus	Glyceridae	0.2
+Polychaeta	Glyceridae	0.4
