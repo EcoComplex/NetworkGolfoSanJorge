@@ -183,6 +183,18 @@ c <- cluster_infomap(as.undirected(g_m))
 plot_troph_level(g_m,modules =TRUE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11),vertex.label.color="black", vertexSizeFactor = 20, vertexSizeMin = 10, community_obj = c, edge.width = E(g_m)$weight*10)
 
 
+#
+# Plot subnetwork of Mirounga leonina
+#
+pos <- which(V(g1)$name == "Mirounga leonina")
+g_m <- make_ego_graph(g1, nodes=V(g1)[pos])
+g_m <- g_m[[1]]
+nms <- as.numeric(V(g_m)) 
+pos <- which(V(g_m)$name == "PESCA")
+V(g_m)$width = E(g_m)$weight * 100
+c <- cluster_infomap(as.undirected(g_m))
+plot_troph_level(g_m,modules =TRUE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite::viridis(11),vertex.label.color="black", vertexSizeFactor = 20, vertexSizeMin = 10, community_obj = c, edge.width = E(g_m)$weight*10)
+
 ```
 
 
@@ -294,18 +306,19 @@ websTbl <- websTbl  %>% select(Network,everything(),-(Modularity:isSWness)) %>% 
 
 rm(wm,websTbl_new)
 
+knitr::kable(websTbl,digits = 4)
+
 save.image()
 
 ```
 
 * WebsTbl
+|Network     | Size| Top| Basal| Omnivory| Links|     LD| Connectance| PathLength| Clustering| Cannib| TLmean|  TLmax| LOmnivory| Components| Vulnerability|  VulSD| Generality|  GenSD|    QSS|  MEing| dietQSS| dietMEing| Modularity|
+|:-----------|----:|---:|-----:|--------:|-----:|------:|-----------:|----------:|----------:|------:|------:|------:|---------:|----------:|-------------:|------:|----------:|------:|------:|------:|-------:|---------:|----------:|
+|Non-fishing |  165|  27|     9|   0.6121|  1015| 6.1515|      0.0373|     0.2093|     0.1503|     13| 2.9572| 4.9361|    0.1727|          1|        7.3551| 1.4463|     6.5064| 1.1072| 0.0546| 0.1066|  0.0962|    0.1644|     0.2885|
+|Fishing     |  167|  27|    10|   0.6168|  1084| 6.4910|      0.0389|     0.2008|     0.1618|     13| 2.9086| 4.7999|    0.1824|          1|        7.7429| 1.3907|     6.9045| 1.1665| 0.0276| 0.1265|  0.0729|    0.1507|     0.2825|
 
-   Network Size Top Basal  Omnivory Links       LD Connectance PathLength Clustering Cannib   TLmean    TLmax LOmnivory Components Vulnerability    VulSD Generality
-1 Unfished  165  27    10 0.6060606  1013 6.139394  0.03720845   2.020661  0.1519309     13 2.944618 4.936072 0.1740484          1      7.340580 1.441673   6.535484
-2   Fished  166  27    10 0.6325301  1084 6.530120  0.03933808   2.086854  0.1728897     13 3.030799 5.026650 0.2329629          1      7.798561 1.436714   6.948718
-     GenSD    QSS     MEing dietQSS dietMEing Modularity
-1 1.115637 0.0576 0.1055118  0.0960 0.1649559  0.2882344
-2 1.165970 0.0304 0.1261070  0.0485 0.1946205  0.2740590
+
 
 * weighted_webs
 
@@ -418,14 +431,8 @@ ggsave("Figures/QSS.png",width=6,height=5,units="in",dpi=600)
 
 ```
 
-## Old 
-|metric     |  medianDif|       sdM|   Fishing| noFishing| effectSize|
-|:----------|----------:|---------:|---------:|---------:|----------:|
-|TLmean     | -0.0869179| 0.1146408| 3.0350812| 2.9481633| -0.7581761|
-|LOmnivory  | -0.0597176| 0.2268089| 0.2381428| 0.1784251| -0.2632949|
-|modularity |  0.0138238| 0.0072483| 0.2726800| 0.2865037|  1.9071770|
 
-## New
+## Topological
 
 |     AD|   T.AD|  asympt. P-value|
 |------:|------:|----------------:|
