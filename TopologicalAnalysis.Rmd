@@ -176,6 +176,7 @@ g_m <- make_ego_graph(g1, nodes=V(g1)[pos])
 g_m <- g_m[[1]]
 nms <- as.numeric(V(g_m)) 
 pos <- which(V(g_m)$name == "PESCA")
+namesPESCA <- V(g_m)$name
 nms[pos] <- V(g_m)$name[pos]
 V(g_m)$name <-  nms
 V(g_m)$width = E(g_m)$weight * 100
@@ -186,7 +187,7 @@ plot_troph_level(g_m,modules =TRUE ,tk=TRUE, vertexLabel = TRUE,bpal=viridisLite
 #
 # Plot subnetwork of Mirounga leonina
 #
-pos <- which(V(g1)$name == "Mirounga leonina")
+pos <- which(V(g1)$name == "Munida gregaria")
 g_m <- make_ego_graph(g1, nodes=V(g1)[pos])
 g_m <- g_m[[1]]
 nms <- as.numeric(V(g_m)) 
@@ -570,7 +571,7 @@ knitr::kable(dfw,digits = 4)
 |wLOmnivory | -0.0595303| 1.1041427|  0.2234628|  0.1639325| -0.0539154|
 |Modularity |  0.8695713| 1.1809291| -5.3771676| -4.5075963|  0.7363451|
 
-## NEW
+## Weighted 
 
 
 |      AD|   T.AD|  asympt. P-value|
@@ -597,7 +598,8 @@ k_fish <- degree(g1)
 k_fish <- tibble(species=names(k_fish),degree=k_fish) %>% arrange(desc(degree))
 
 kk <- left_join(k_fish,k_no_fish, by="species")
-names(kk) <- c("Species","Fished","Unfished")
+names(kk) <- c("Species","Fishing","Nonfishing")
+#kk <- kk %>% filter(Fishing != Nonfishing)
 knitr::kable(kk)
 pander::pandoc.table(kk[1:23,],digits = 4,style="rmarkdown",emphasize.italics.cols=1 )
   
@@ -621,9 +623,20 @@ tl_fish <- NetIndices::TrophInd(get.adjacency(g1,sparse=F))
 tl_fish <- tibble(species=rownames(tl_fish),TL=tl_fish$TL) %>% arrange(desc(TL))
 kk1 <- left_join(tl_fish,tl_no_fish, by="species")
 names(kk1) <- c("Species","Fished","Unfished")
+mean(kk1$Fished)
+mean(kk1$Unfished, na.rm = TRUE)
 
 knitr::kable(kk1,digits = 4)
 pander::pandoc.table(kk1,digits = 4,style="rmarkdown",emphasize.italics.cols=1 )
+
+# Table with TL of PESCA Preys
+#
+namesPESCA <- namesPESCA[-c(48)]
+
+knitr::kable(kk1 %>% filter(Species %in% namesPESCA))
+# Average trophic level of PESCA
+#
+kk1 %>% filter(Species %in% namesPESCA) %>% summarise_all(mean,na.rm = TRUE)
   
 ```
 
