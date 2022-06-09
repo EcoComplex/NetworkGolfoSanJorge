@@ -1,6 +1,7 @@
 # Network analysis suggests changes in food web stability produced by bottom trawl fishery in Patagonia
 
-[![DOI](https://zenodo.org/badge/114162751.svg)](https://zenodo.org/badge/latestdoi/114162751)
+[![DOI](https://zenodo.org/badge/442574847.svg)](https://zenodo.org/badge/latestdoi/442574847)
+
 
 ## Abstract
 
